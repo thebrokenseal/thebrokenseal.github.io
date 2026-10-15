@@ -1446,7 +1446,10 @@ h4 { font-size: 1.2rem; }
 
 .party-phases li { margin: 0.4rem 0; }
 
-.party-video .video-wrapper { margin-top: 1.25rem; }
+.party-video .video-wrapper {
+    margin-top: 1.25rem;
+    padding-top: 0; /* the shared wrapper reserves 16:9 for absolute skill videos; this video sizes itself */
+}
 
 .party-video-player {
     width: 100%;
