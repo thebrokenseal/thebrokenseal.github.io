@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Broken Seal | เกมแอ็กชัน RPG ออนไลน์ Hack & Slash</title>
+    <link rel="icon" type="image/png" href="assets/icon_1024.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Cinzel+Decorative:wght@700;900&family=Kanit:wght@400;500;600;700&family=Taviraj:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark lang-th">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="brand-logo">
+                <img src="assets/icon_1024.png" alt="The Broken Seal Icon" class="nav-icon">
+                <span class="brand-name">THE BROKEN SEAL</span>
+            </a>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li>
+                        <a href="#overview">
+                            <span class="lang-th">เรื่องราว</span>
+                            <span class="lang-en">Overview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#videos">
+                            <span class="lang-th">วิดีโอตัวอย่าง</span>
+                            <span class="lang-en">Previews</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#weapons">
+                            <span class="lang-th">4 อาวุธ</span>
+                            <span class="lang-en">Weapons</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#world">
+                            <span class="lang-th">3 ทวีป</span>
+                            <span class="lang-en">World</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#seal-rift">
+                            <span class="lang-th">Seal Rift</span>
+                            <span class="lang-en">Seal Rift</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#platforms">
+                            <span class="lang-th">แพลตฟอร์ม</span>
+                            <span class="lang-en">Platforms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="guide.html">
+                            <span class="lang-th">คู่มือ</span>
+                            <span class="lang-en">Guide</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="langToggleBtn" class="btn-lang" aria-label="Switch Language">
+                    <span class="lang-th">EN</span>
+                    <span class="lang-en">TH</span>
+                </button>
+                <!-- TODO: The sign-up form URL will be added later -->
+                <a href="#alpha-signup" class="btn-primary nav-cta">
+                    <span class="lang-th">สมัคร Alpha</span>
+                    <span class="lang-en">Join Alpha</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-bg" style="background-image: url('assets/sky_rift.png');"></div>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/map_flight_poster.jpg" aria-hidden="true">
+            <source src="assets/map_flight_bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-particles"></div>
+        
+        <div class="hero-content">
+            <div class="logo-wrapper">
+                <img src="assets/logo_cinzel.png" alt="The Broken Seal Logo" class="hero-logo">
+            </div>
+
+            <p class="hero-tagline">
+                <span class="lang-th">"ไม่ใช่เจ้าที่เลือกอาวุธ… แต่อาวุธต่างหาก ที่เลือกเจ้า"</span>
+                <span class="lang-en">"You don't choose the weapon. The weapon chooses you."</span>
+            </p>
+
+            <div class="hero-badges">
+                <span class="badge">Online Action RPG</span>
+                <span class="badge">Hack & Slash</span>
+                <span class="badge highlight">Skill Spam</span>
+                <span class="badge">PC & Mobile</span>
+            </div>
+
+            <p class="hero-description">
+                <span class="lang-th">สัมผัสประสบการณ์สาดสกิลรัว ๆ ในโลกแฟนตาซีมืด เมื่อผนึกโบราณพังทลาย ประตูมิติต่างโลกเปิดออก มอนสเตอร์คลุ้มคลั่ง และอาวุธโบราณก้าวขึ้นมาเป็นครูผู้ถ่ายทอดวิชา</span>
+                <span class="lang-en">Experience relentless skill-spamming in a dark fantasy world. As the ancient seal breaks, rifts shatter across the lands, monsters go mad, and ancient weapons become your martial masters.</span>
+            </p>
+
+            <div class="hero-cta-group">
+                <!-- TODO: The sign-up form URL will be added later -->
+                <a href="#alpha-signup" class="btn-primary btn-large glow-effect">
+                    <span class="lang-th">เข้าร่วม Alpha Test</span>
+                    <span class="lang-en">Join Alpha Test</span>
+                </a>
+                <a href="#videos" class="btn-secondary btn-large">
+                    <span class="lang-th">ชมวิดีโอเกมเพลย์</span>
+                    <span class="lang-en">Watch Gameplay</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span class="lang-th">เลื่อนลงเพื่อสำรวจ</span>
+            <span class="lang-en">Scroll to Explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- OVERVIEW & STORY SECTION -->
+    <section id="overview" class="section-padding overview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-th">จุดเริ่มต้นแห่งรอยแยก</span>
+                    <span class="lang-en">The Unraveling Seal</span>
+                </h2>
+                <div class="title-divider"><img src="assets/shield_intact_1.png" alt="Shield Emblem" class="divider-icon"></div>
+            </div>
+
+            <div class="story-grid">
+                <div class="story-card frame-gold">
+                    <div class="story-content">
+                        <h3 class="story-headline">
+                            <span class="lang-th">วันที่ฟ้าฉีกขาด</span>
+                            <span class="lang-en">The Day the Sky Tore Open</span>
+                        </h3>
+                        <p class="story-text">
+                            <span class="lang-th">เช้าวันนั้นในหมู่บ้านเล็ก ๆ นอกกำแพงเอลดอเรีย คีป ไม่ต่างจากทุกวัน จนกระทั่งท้องฟ้าแยกออกเป็นรอยร้าวสีม่วง ผืนป่าที่เคยเงียบสงบเต็มไปด้วยเสียงคำราม สัตว์และอสูรทั่วทั้งโลกคลุ้มคลั่งขึ้นพร้อมกัน</span>
+                            <span class="lang-en">It was an ordinary morning in a small village outside the walls of Eldoria Keep, until the sky split into violet cracks. The quiet forest filled with roars, and every beast and monster in the world went mad at once.</span>
+                        </p>
+                        <p class="story-text">
+                            <span class="lang-th">ระหว่างหนีตาย คุณได้แต่มองน้องของคุณถูกรอยแยกกลืนหายไปต่อหน้า มือเปล่าของชาวบ้านธรรมดาคว้าอะไรไว้ไม่ได้เลย</span>
+                            <span class="lang-en">As your family fled, you could only watch a rift swallow your younger sibling whole. The bare hands of a villager could hold on to nothing.</span>
+                        </p>
+                        <p class="story-text">
+                            <span class="lang-th">ในศาลเจ้าเก่าที่ถูกลืม อาวุธโบราณสี่ชิ้นรออยู่ และหนึ่งในนั้นเลือกคุณ มันจดจำการต่อสู้ของวีรชนที่ไม่มีใครจำชื่อได้อีกแล้ว และพร้อมจะสอนทุกท่วงท่าให้กับมือที่ไม่เคยจับอาวุธมาก่อน</span>
+                            <span class="lang-en">In a forgotten shrine, four ancient weapons were waiting, and one of them chose you. It remembers the battles of heroes whose names no one recalls, and it will teach every one of their moves to hands that have never held a weapon.</span>
+                        </p>
+                        <p class="story-text story-hook">
+                            <span class="lang-th">ใครเป็นผู้ผนึกรอยแยกเหล่านี้ไว้เมื่อนานมาแล้ว? ทำไมผนึกจึงแตกในวันนี้? และน้องของคุณยังรออยู่ที่ไหนสักแห่ง ในดินแดนหลังผนึกที่บันทึกโบราณเรียกว่า <strong>Abyssara</strong> หรือไม่?</span>
+                            <span class="lang-en">Who sealed these rifts long ago? Why did the seal break now? And is your sibling still waiting somewhere beyond it, in the land the old records call <strong>Abyssara</strong>?</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="features-highlights">
+                    <div class="feature-item frame-dark">
+                        <div class="feature-icon">⚡</div>
+                        <div class="feature-body">
+                            <h4>
+                                <span class="lang-th">Skill Spam Action</span>
+                                <span class="lang-en">Skill Spam Action</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ระบบต่อสู้เน้นการรัวสกิลต่อเนื่อง คูลดาวน์ไว คอมโบมันส์ไร้สะดุด</span>
+                                <span class="lang-en">Fast-paced combat centered around chaining skills seamlessly with minimal cooldown delay.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item frame-dark">
+                        <div class="feature-icon">⚔️</div>
+                        <div class="feature-body">
+                            <h4>
+                                <span class="lang-th">Classless System</span>
+                                <span class="lang-en">Classless System</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ไม่มีอาชีพตายตัว อาวุธคืออาชีพ! สลับอาวุธเพื่อเปลี่ยนสายการต่อสู้ได้ทันที</span>
+                                <span class="lang-en">No fixed class restrictions. Your weapon defines your class and combat style.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item frame-dark">
+                        <div class="feature-icon">🎨</div>
+                        <div class="feature-body">
+                            <h4>
+                                <span class="lang-th">HD-2D Visuals</span>
+                                <span class="lang-en">HD-2D Visuals</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ตัวละครพิกเซลความละเอียดสูง แสดงผลบนแมพ 3D กราฟิกแสงเงาสมจริง</span>
+                                <span class="lang-en">High-definition pixel art characters set inside realistic, atmospheric 3D worlds.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item frame-dark">
+                        <div class="feature-icon">🌌</div>
+                        <div class="feature-body">
+                            <h4>
+                                <span class="lang-th">Drop-Only Ultimate</span>
+                                <span class="lang-en">Drop-Only Ultimate</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ท่าไม้ตายสุดยอดไม่ได้มาจาก Skill Tree แต่ดรอปจากอาวุธในโลกกว้างเพื่อการแลกเปลี่ยน</span>
+                                <span class="lang-en">Ultimate skills are bound to weapons dropped in the world, fostering trading and build diversity.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILL VIDEOS SECTION -->
+    <section id="videos" class="section-padding videos-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-th">ตัวอย่างการสาดสกิล 4 อาวุธ</span>
+                    <span class="lang-en">4 Weapons Skill Gameplay</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-th">สัมผัสความเร็วและเอฟเฟกต์สุดอลังการจากการต่อสู้จริงในเกม</span>
+                    <span class="lang-en">Witness the intense action and dynamic effects captured straight from the engine</span>
+                </p>
+                <p class="section-note">
+                    <span class="lang-th">* วิดีโอแสดงเพียงบางส่วน: อาวุธละ 1 สายจาก 2 สาย และยังไม่รวมท่าไม้ตาย (Ultimate) สกิลและเอฟเฟกต์ทั้งหมดยังอยู่ระหว่างพัฒนา อาจเปลี่ยนแปลงได้</span>
+                    <span class="lang-en">* Only a part of each kit is shown: one of the two branches per weapon, without Ultimates. All skills and effects are still in development and may change.</span>
+                </p>
+                <div class="title-divider"><img src="assets/shield_intact_1.png" alt="Shield Emblem" class="divider-icon"></div>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video 1: Sword & Shield -->
+                <div class="video-card frame-gold">
+                    <div class="video-wrapper">
+                        <video muted loop playsinline preload="metadata" poster="assets/cover_cinzel.png" class="skill-video">
+                            <source src="assets/01_Sword_and_Shield_all_skills.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="video-play-toggle" aria-label="Play/Pause Video">▶</button>
+                    </div>
+                    <div class="video-info">
+                        <h3>
+                            <span class="lang-th">Sword & Shield (ดาบและโล่)</span>
+                            <span class="lang-en">Sword & Shield</span>
+                        </h3>
+                        <p>
+                            <span class="lang-th">การประสานระหว่างการตั้งรับอันแข็งแกร่งและการฟาดฟันทำลายล้าง</span>
+                            <span class="lang-en">Unbreakable defense paired with devastating counter-attacks and crowd control.</span>
+                        </p>
+                        <p class="video-branch">
+                            <span class="lang-th">สายที่แสดง: Tank (ป้องกัน/บัฟหมู่)</span>
+                            <span class="lang-en">Shown: the Tank branch</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 2: Staff -->
+                <div class="video-card frame-gold">
+                    <div class="video-wrapper">
+                        <video muted loop playsinline preload="metadata" poster="assets/cover_cinzel.png" class="skill-video">
+                            <source src="assets/02_Staff_all_skills.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="video-play-toggle" aria-label="Play/Pause Video">▶</button>
+                    </div>
+                    <div class="video-info">
+                        <h3>
+                            <span class="lang-th">Staff (คทาเวทมนตร์)</span>
+                            <span class="lang-en">Magic Staff</span>
+                        </h3>
+                        <p>
+                            <span class="lang-th">เวทมนตร์ระเบิดธาตุและการสนับสนุนพลังชีวิตในแนวหลัง</span>
+                            <span class="lang-en">Elemental explosions combined with lifesteal support abilities.</span>
+                        </p>
+                        <p class="video-branch">
+                            <span class="lang-th">สายที่แสดง: Elemental ธาตุน้ำแข็ง</span>
+                            <span class="lang-en">Shown: the Elemental branch (Ice)</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 3: Dual Daggers -->
+                <div class="video-card frame-gold">
+                    <div class="video-wrapper">
+                        <video muted loop playsinline preload="metadata" poster="assets/cover_cinzel.png" class="skill-video">
+                            <source src="assets/03_Dual_Daggers_all_skills.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="video-play-toggle" aria-label="Play/Pause Video">▶</button>
+                    </div>
+                    <div class="video-info">
+                        <h3>
+                            <span class="lang-th">Dual Daggers (มีดคู่)</span>
+                            <span class="lang-en">Dual Daggers</span>
+                        </h3>
+                        <p>
+                            <span class="lang-th">ความเร็วเหนือแสง พิษร้ายกัดกร่อน และคริติคอลปลิดชีพ</span>
+                            <span class="lang-en">Lightning-fast strikes, armor-shredding venom, and lethal critical bleeds.</span>
+                        </p>
+                        <p class="video-branch">
+                            <span class="lang-th">สายที่แสดง: Critical (ตีเร็ว/เลือดไหล)</span>
+                            <span class="lang-en">Shown: the Critical branch</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video 4: Bow -->
+                <div class="video-card frame-gold">
+                    <div class="video-wrapper">
+                        <video muted loop playsinline preload="metadata" poster="assets/cover_cinzel.png" class="skill-video">
+                            <source src="assets/04_Bow_all_skills.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <button class="video-play-toggle" aria-label="Play/Pause Video">▶</button>
+                    </div>
+                    <div class="video-info">
+                        <h3>
+                            <span class="lang-th">Bow (ธนู)</span>
+                            <span class="lang-en">Longbow</span>
+                        </h3>
+                        <p>
+                            <span class="lang-th">การยิงระยะไกลขณะเคลื่อนที่ และกับดักควบคุมพื้นที่</span>
+                            <span class="lang-en">Mobile long-range archery paired with tactical paralyzing traps.</span>
+                        </p>
+                        <p class="video-branch">
+                            <span class="lang-th">สายที่แสดง: Archery</span>
+                            <span class="lang-en">Shown: the Archery branch</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Party video: four branches against an Elite -->
+            <div class="party-video frame-gold">
+                <div class="party-video-text">
+                    <h3>
+                        <span class="lang-th">ปาร์ตี้ 4 สาย ล่า Elite: Goblin Warchief</span>
+                        <span class="lang-en">A Party of Four vs. the Elite Goblin Warchief</span>
+                    </h3>
+                    <p>
+                        <span class="lang-th">ดาบโล่ (Tank) · มีดคู่ (Critical) · คทาน้ำแข็ง · ธนู (Archery) รวมทีมล้มบอสโลกสูง 8 เมตร บอสคลั่งเมื่อเลือดเหลือ 60% และขยายร่างเมื่อเหลือ 25% เปิดเสียงเพื่อฟังการต่อสู้เต็มรูปแบบ</span>
+                        <span class="lang-en">Sword &amp; Shield (Tank), Dual Daggers (Critical), Ice Staff and Bow (Archery) team up against an 8 m world boss. It enrages at 60% health and grows at 25%. Turn the sound on for the full fight.</span>
+                    </p>
+                    <p class="section-note">
+                        <span class="lang-th">* ฉากสาธิต: ตัวละครควบคุมด้วยบอทและปรับดาเมจให้จบในเวลาสั้น ระบบปาร์ตี้ออนไลน์จริงจะเปิดในช่วง Alpha Test</span>
+                        <span class="lang-en">* A demo: the heroes are bot-controlled and their damage is tuned for a short clip. Online parties arrive with the Alpha Test.</span>
+                    </p>
+                </div>
+                <div class="video-wrapper">
+                    <video controls muted loop playsinline preload="metadata" poster="assets/cover_cinzel.png" class="party-video-player">
+                        <source src="assets/05_Party_vs_Warchief.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEAPONS SECTION -->
+    <section id="weapons" class="section-padding weapons-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-th">4 สายอาวุธ & Skill Trees</span>
+                    <span class="lang-en">4 Weapon Classes & Skill Trees</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-th">แต่ละอาวุธมี 2 เส้นทางพัฒนาทักษะเฉพาะตัว + Ultimate สุ่มจากดรอปโลก</span>
+                    <span class="lang-en">Each weapon features 2 distinct specialization paths plus world-drop Ultimates</span>
+                </p>
+                <div class="title-divider"><img src="assets/shield_intact_1.png" alt="Shield Emblem" class="divider-icon"></div>
+            </div>
+
+            <div class="weapons-grid">
+                <!-- Weapon 1: Sword & Shield -->
+                <div class="weapon-card frame-gold">
+                    <div class="weapon-header">
+                        <div class="weapon-badge">MELEE / TANK</div>
+                        <h3>
+                            <span class="lang-th">Sword & Shield</span>
+                            <span class="lang-en">Sword & Shield</span>
+                        </h3>
+                        <p class="weapon-tag">
+                            <span class="lang-th">ปราการเหล็กกล้าผู้ปกป้องและบดขยี้</span>
+                            <span class="lang-en">The Unyielding Fortress & Crusher</span>
+                        </p>
+                    </div>
+                    <div class="weapon-paths">
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 1: Pure Tank</span>
+                                <span class="lang-en">Path 1: Pure Tank</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">เน้นบัฟป้องกัน พลังชีวิตมหาศาล บอร์ดเกราะ และบัฟต้านทานให้ปาร์ตี้</span>
+                                <span class="lang-en">Focuses on defense, massive HP, damage absorption, and party-wide mitigation buffs.</span>
+                            </p>
+                        </div>
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 2: Damage</span>
+                                <span class="lang-en">Path 2: Damage</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">เน้นการทำดาเมจหนัก บัฟพลังโจมตี ATK และสกิลฟาดฟันทำลายกลุ่มศัตรู</span>
+                                <span class="lang-en">Focuses on heavy offensive power, party ATK buffs, and ground-shattering cleaves.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ultimate-note">
+                        <span class="ult-label">ULTIMATE:</span>
+                        <span class="lang-th">2 แบบ ตามสาย Pure Tank / Damage (ได้จากอาวุธที่ดรอปเท่านั้น)</span>
+                        <span class="lang-en">2 kinds, one per path: Pure Tank / Damage (from dropped weapons only)</span>
+                    </div>
+                </div>
+
+                <!-- Weapon 2: Dual Daggers -->
+                <div class="weapon-card frame-gold">
+                    <div class="weapon-header">
+                        <div class="weapon-badge">MELEE / SPEED</div>
+                        <h3>
+                            <span class="lang-th">Dual Daggers</span>
+                            <span class="lang-en">Dual Daggers</span>
+                        </h3>
+                        <p class="weapon-tag">
+                            <span class="lang-th">เงาปลิดชีพแห่งความเร็วและพิษร้าย</span>
+                            <span class="lang-en">Deadly Shadow of Speed & Venom</span>
+                        </p>
+                    </div>
+                    <div class="weapon-paths">
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 1: Poison</span>
+                                <span class="lang-en">Path 1: Poison</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">กระหน่ำพิษกัดกร่อน Venom เพื่อลดเกราะศัตรูและสร้างดาเมจต่อเนื่อง</span>
+                                <span class="lang-en">Inflicts stackable Venom poison that shreds enemy armor and burns health continuously.</span>
+                            </p>
+                        </div>
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 2: Critical</span>
+                                <span class="lang-en">Path 2: Critical</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ความเร็วโจมตีระดับสูง บัฟ Critical ปาร์ตี้ และ Bleed บาดแผลฉกรรจ์</span>
+                                <span class="lang-en">Unmatched attack speed, party Critical buffs, and severe Bleeding strikes.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ultimate-note">
+                        <span class="ult-label">ULTIMATE:</span>
+                        <span class="lang-th">2 แบบ ตามสาย Poison / Critical (ได้จากอาวุธที่ดรอปเท่านั้น)</span>
+                        <span class="lang-en">2 kinds, one per path: Poison / Critical (from dropped weapons only)</span>
+                    </div>
+                </div>
+
+                <!-- Weapon 3: Staff -->
+                <div class="weapon-card frame-gold">
+                    <div class="weapon-header">
+                        <div class="weapon-badge">MAGIC / SUPPORT</div>
+                        <h3>
+                            <span class="lang-th">Staff</span>
+                            <span class="lang-en">Magic Staff</span>
+                        </h3>
+                        <p class="weapon-tag">
+                            <span class="lang-th">จ้าวแห่งเวทมนตร์ธาตุและตราพลังชีวิต</span>
+                            <span class="lang-en">Master of Elemental Arcana & Life Sigils</span>
+                        </p>
+                    </div>
+                    <div class="weapon-paths">
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 1: Elemental</span>
+                                <span class="lang-en">Path 1: Elemental</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">เลือกธาตุประจำตัว (Attunement) เพื่อสร้างเวทวงกว้างและบัฟฟื้นฟูมานา</span>
+                                <span class="lang-en">Attune to Fire, Ice, or Lightning for huge AoE spells and mana regeneration buffs.</span>
+                            </p>
+                        </div>
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 2: Support</span>
+                                <span class="lang-en">Path 2: Support</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ฮีลปาร์ตี้จากการโจมตี สลักตราชีวิต เหมาะทั้งเล่นเดี่ยวและเล่นเป็นกลุ่ม</span>
+                                <span class="lang-en">Heals through damage, places Life Sigils, designed for both solo and party synergy.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ultimate-note">
+                        <span class="ult-label">ULTIMATE:</span>
+                        <span class="lang-th">4 แบบ: ไฟ / น้ำแข็ง / สายฟ้า / Support (ได้จากอาวุธที่ดรอปเท่านั้น)</span>
+                        <span class="lang-en">4 kinds: Fire / Ice / Lightning / Support (from dropped weapons only)</span>
+                    </div>
+                </div>
+
+                <!-- Weapon 4: Bow -->
+                <div class="weapon-card frame-gold">
+                    <div class="weapon-header">
+                        <div class="weapon-badge">RANGED / CONTROL</div>
+                        <h3>
+                            <span class="lang-th">Bow</span>
+                            <span class="lang-en">Longbow</span>
+                        </h3>
+                        <p class="weapon-tag">
+                            <span class="lang-th">คมศรระยะไกลและกับดักสยบสมรภูมิ</span>
+                            <span class="lang-en">Long-Range Precision & Battlefield Control</span>
+                        </p>
+                    </div>
+                    <div class="weapon-paths">
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 1: Archery</span>
+                                <span class="lang-en">Path 1: Archery</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ยิงขณะเดินได้ 60% สกิลยิงเดี่ยว/หมู่ ติดสถานะ Expose และบัฟ ASPD ให้ปาร์ตี้</span>
+                                <span class="lang-en">Shoot while moving at 60% speed, target single/groups with Expose and ASPD buffs.</span>
+                            </p>
+                        </div>
+                        <div class="path-box">
+                            <h4>
+                                <span class="lang-th">Path 2: Trapper</span>
+                                <span class="lang-en">Path 2: Trapper</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">วางกับดักได้สูงสุด 3 อัน สร้างดาเมจ สตั้น หยุดการเคลื่อนไหวของศัตรู</span>
+                                <span class="lang-en">Deploy up to 3 tactical traps that damage, snare, freeze, and paralyze enemies.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ultimate-note">
+                        <span class="ult-label">ULTIMATE:</span>
+                        <span class="lang-th">2 แบบ ตามสาย Archery / Trapper (ได้จากอาวุธที่ดรอปเท่านั้น)</span>
+                        <span class="lang-en">2 kinds, one per path: Archery / Trapper (from dropped weapons only)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORLD SECTION -->
+    <section id="world" class="section-padding world-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-th">3 ทวีปแห่งมหาดินแดน</span>
+                    <span class="lang-en">3 Grand Continents</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-th">ออกสำรวจภูมิประเทศที่แตกต่าง มอนสเตอร์เฉพาะถิ่น และเมืองหลักศูนย์กลาง</span>
+                    <span class="lang-en">Explore diverse biomes, unique monsters, and thriving capital hubs</span>
+                </p>
+                <div class="title-divider"><img src="assets/shield_intact_1.png" alt="Shield Emblem" class="divider-icon"></div>
+            </div>
+
+            <div class="continents-wrapper">
+                <!-- Continent 1: Eldoria -->
+                <div class="continent-card active frame-gold">
+                    <div class="continent-tag">FIRST CONTINENT (Lv 1 - 20)</div>
+                    <h3>
+                        <span class="lang-th">Eldoria (เอลดอเรีย)</span>
+                        <span class="lang-en">Eldoria</span>
+                    </h3>
+                    <p class="continent-desc">
+                        <span class="lang-th">ดินแดนเริ่มต้นแห่งทุ่งหญ้า ป่าลึก บึงหมอก สุสานโบราณ และเมืองใหญ่ที่สุดของทั้งสามทวีป <strong>Eldoria Keep</strong> ปราสาทศูนย์กลางของนักผจญภัยทุกคน</span>
+                        <span class="lang-en">The starting continent featuring vibrant grasslands, deep forests, misty marshes, ancient ruins, and the grandest city hub: <strong>Eldoria Keep</strong>.</span>
+                    </p>
+                    <div class="zones-list">
+                        <span class="zone-pill">Eldoria Keep (เมืองหลัก)</span>
+                        <span class="zone-pill">Whisperwood</span>
+                        <span class="zone-pill">Thornveil Forest</span>
+                        <span class="zone-pill">Mirefen Marsh</span>
+                        <span class="zone-pill">Old Barrow Ruins</span>
+                    </div>
+                </div>
+
+                <!-- Continent 2: Ashenfall -->
+                <div class="continent-card frame-gold">
+                    <div class="continent-tag">SECOND CONTINENT (Lv 21 - 40)</div>
+                    <h3>
+                        <span class="lang-th">Ashenfall (แอเชนฟอล)</span>
+                        <span class="lang-en">Ashenfall</span>
+                    </h3>
+                    <p class="continent-desc">
+                        <span class="lang-th">แผ่นดินเดือดแผดเผา ทะเลทรายร้อนระอุกว้างใหญ่ หุบผาชัน ภูเขาไฟครุกรุ่น และซากนครโบราณลึกลับ Solmara</span>
+                        <span class="lang-en">A scorched land of blazing sunscar dunes, deep canyons, roaring volcanic caldera, and the fallen ruins of Solmara.</span>
+                    </p>
+                    <div class="zones-list">
+                        <span class="zone-pill">Emberreach (เมืองหลัก)</span>
+                        <span class="zone-pill">Sunscar Dunes</span>
+                        <span class="zone-pill">Ashgrave Canyon</span>
+                        <span class="zone-pill">Cinder Caldera</span>
+                        <span class="zone-pill">Ruins of Solmara</span>
+                    </div>
+                </div>
+
+                <!-- Continent 3: Frostheim -->
+                <div class="continent-card frame-gold">
+                    <div class="continent-tag">THIRD CONTINENT (Lv 41 - 60)</div>
+                    <h3>
+                        <span class="lang-th">Frostheim (ฟรอสต์ไฮม์)</span>
+                        <span class="lang-en">Frostheim</span>
+                    </h3>
+                    <p class="continent-desc">
+                        <span class="lang-th">ทวีปน้ำแข็งอันหนาวเหน็บ หุบเขาริมหิมะ ป้อมปราการผู้พิทักษ์ ช่องเขาหิมะ และวิหารแสงเหนืออันศักดิ์สิทธิ์</span>
+                        <span class="lang-en">A frozen continent of perpetual snowstorms, warden bastions, treacherous icy passes, and sacred aurora sanctuaries.</span>
+                    </p>
+                    <div class="zones-list">
+                        <span class="zone-pill">Hrimgard (เมืองหลัก)</span>
+                        <span class="zone-pill">Rimefrost Vale</span>
+                        <span class="zone-pill">Wardens' Bastion</span>
+                        <span class="zone-pill">Icefang Pass</span>
+                        <span class="zone-pill">Aurora Sanctum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEAL RIFT SECTION -->
+    <section id="seal-rift" class="section-padding seal-rift-section">
+        <div class="container">
+            <div class="seal-rift-box frame-gold glow-rift">
+                <div class="seal-rift-content">
+                    <div class="event-badge">PARTY DUNGEON EVENT</div>
+                    <h2>
+                        <span class="lang-th">Seal Rift: รอยแยกผนึกมืด</span>
+                        <span class="lang-en">Seal Rift Dungeon Event</span>
+                    </h2>
+                    <p class="lead-text">
+                        <span class="lang-th">มหาดันเจี้ยนปาร์ตี้สุ่มเปิดทั่วโลก! สานสัมพันธ์ปาร์ตี้ 4 คนบุกทะลุผ่านมิติมืด</span>
+                        <span class="lang-en">Spontaneous party dungeon events tearing open across world maps! Form a 4-player party and brave the rift.</span>
+                    </p>
+                    
+                    <div class="rift-features-grid">
+                        <div class="rift-feature">
+                            <div class="rf-num">01</div>
+                            <h4>
+                                <span class="lang-th">เกิดสุ่มทุก 4 ชั่วโมง</span>
+                                <span class="lang-en">Opens Every 4 Hours</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">ประตูรอยแยกจะเปิดสุ่มบนแมพล่ามอนสเตอร์นาน 1 ชั่วโมง ประกาศเตือนทั้งเซิร์ฟเวอร์</span>
+                                <span class="lang-en">Rifts open randomly across maps for 1 hour, triggering server-wide announcements.</span>
+                            </p>
+                        </div>
+
+                        <div class="rift-feature">
+                            <div class="rf-num">02</div>
+                            <h4>
+                                <span class="lang-th">Instance ปาร์ตี้ 4 คน</span>
+                                <span class="lang-en">4-Player Party Instance</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">แต่ละปาร์ตี้จะเข้าสู่อินสแตนซ์ดันเจี้ยนส่วนตัว ไม่ต้องแย่งกับปาร์ตี้อื่น</span>
+                                <span class="lang-en">Each party enters their own isolated instance with 2-3 randomized floor layouts.</span>
+                            </p>
+                        </div>
+
+                        <div class="rift-feature">
+                            <div class="rf-num">03</div>
+                            <h4>
+                                <span class="lang-th">บอสกลไก Abyssara</span>
+                                <span class="lang-en">Abyssara Boss Mechanics</span>
+                            </h4>
+                            <p>
+                                <span class="lang-th">เผชิญหน้ากองบอสและผู้ถือกุญแจ Keybearer พร้อมบอสกลไกธีมมิติมืด</span>
+                                <span class="lang-en">Confront Keybearers and bosses with unique mechanics requiring true teamwork.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLATFORMS SECTION -->
+    <section id="platforms" class="section-padding platforms-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-th">Cross-Platform PC + Mobile</span>
+                    <span class="lang-en">Cross-Platform PC & Mobile</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-th">เล่นร่วมกันได้อย่างสมบูรณ์แบบ ไม่ว่าจะบนคอมพิวเตอร์หรือมือถือ</span>
+                    <span class="lang-en">Seamless cross-play experience across PC, iOS, and Android</span>
+                </p>
+                <div class="title-divider"><img src="assets/shield_intact_1.png" alt="Shield Emblem" class="divider-icon"></div>
+            </div>
+
+            <div class="platform-cards">
+                <div class="platform-card frame-dark">
+                    <div class="platform-icon">💻</div>
+                    <h3>
+                        <span class="lang-th">PC Edition</span>
+                        <span class="lang-en">PC Edition</span>
+                    </h3>
+                    <ul>
+                        <li><span class="lang-th">การควบคุมด้วยเมาส์และคีย์บอร์ดแม่นยำ</span><span class="lang-en">Precision Mouse & Keyboard controls</span></li>
+                        <li><span class="lang-th">การแสดงผล 60+ FPS กราฟิกแสงเงา AAA</span><span class="lang-en">60+ FPS with maximum atmospheric lighting</span></li>
+                        <li><span class="lang-th">ปุ่มลัดสลับ Preset อาวุธรวดเร็ว</span><span class="lang-en">Fast weapon preset hotkeys</span></li>
+                    </ul>
+                </div>
+
+                <div class="platform-card frame-dark">
+                    <div class="platform-icon">📱</div>
+                    <h3>
+                        <span class="lang-th">Mobile Edition (iOS / Android)</span>
+                        <span class="lang-en">Mobile Edition (iOS / Android)</span>
+                    </h3>
+                    <ul>
+                        <li><span class="lang-th">UI สัมผัสออกแบบพิเศษ ปุ่มนิ้วโป้งใหญ่</span><span class="lang-en">Tailored touch UI with comfortable thumb placement</span></li>
+                        <li><span class="lang-th">ระบบ Auto Farming เมื่อต้องการพักผ่อน</span><span class="lang-en">Offline Auto Farming feature</span></li>
+                        <li><span class="lang-th">การปรับแต่งกราฟิกยืดหยุ่น ลื่นไหลทุกเครื่อง</span><span class="lang-en">Flexible performance options for all devices</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALPHA CALL TO ACTION -->
+    <section id="alpha-signup" class="section-padding cta-section">
+        <div class="container">
+            <div class="cta-box frame-gold">
+                <h2 class="cta-title">
+                    <span class="lang-th">พร้อมสัมผัสการสาดสกิลรัว ๆ แล้วหรือยัง?</span>
+                    <span class="lang-en">Ready to Master the Broken Seal?</span>
+                </h2>
+                <p class="cta-text">
+                    <span class="lang-th">สมัครเข้าร่วมทดสอบ Alpha Test ล่วงหน้า เพื่อเป็นนักผจญภัยกลุ่มแรกที่ได้ก้าวเข้าสู่โลกของ The Broken Seal</span>
+                    <span class="lang-en">Sign up for early Alpha Test access and be among the first heroes to break into Abyssara.</span>
+                </p>
+                
+                <!-- Sign-up: counts interest and sizes the Alpha servers (platform, play time).
+                     The endpoint is set in main.js (SIGNUP), e.g. a Google Form owned by the team. -->
+                <form id="signupForm" class="signup-form" novalidate>
+                    <label class="signup-field">
+                        <span class="lang-th">อีเมล</span><span class="lang-en">Email</span>
+                        <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+                    </label>
+                    <label class="signup-field">
+                        <span class="lang-th">เล่นบนอุปกรณ์ไหน</span><span class="lang-en">Where will you play</span>
+                        <select name="platform" required>
+                            <option value="" data-th="เลือก" data-en="Choose">เลือก</option>
+                            <option value="pc" data-th="PC" data-en="PC">PC</option>
+                            <option value="ios" data-th="มือถือ iOS" data-en="Mobile iOS">มือถือ iOS</option>
+                            <option value="android" data-th="มือถือ Android" data-en="Mobile Android">มือถือ Android</option>
+                            <option value="both" data-th="ทั้ง PC และมือถือ" data-en="PC and mobile">ทั้ง PC และมือถือ</option>
+                        </select>
+                    </label>
+                    <label class="signup-field">
+                        <span class="lang-th">เวลาเล่นต่อสัปดาห์ (ประมาณ)</span><span class="lang-en">Play time per week (about)</span>
+                        <select name="hours" required>
+                            <option value="" data-th="เลือก" data-en="Choose">เลือก</option>
+                            <option value="lt5" data-th="น้อยกว่า 5 ชั่วโมง" data-en="Under 5 hours">น้อยกว่า 5 ชั่วโมง</option>
+                            <option value="5-15" data-th="5–15 ชั่วโมง" data-en="5–15 hours">5–15 ชั่วโมง</option>
+                            <option value="15-30" data-th="15–30 ชั่วโมง" data-en="15–30 hours">15–30 ชั่วโมง</option>
+                            <option value="gt30" data-th="มากกว่า 30 ชั่วโมง" data-en="Over 30 hours">มากกว่า 30 ชั่วโมง</option>
+                        </select>
+                    </label>
+                    <fieldset class="signup-choice">
+                        <label><input type="radio" name="intent" value="alpha" checked>
+                            <span class="lang-th">อยากร่วมทดสอบ Alpha</span><span class="lang-en">I want to join the Alpha test</span></label>
+                        <label><input type="radio" name="intent" value="news">
+                            <span class="lang-th">รับข่าวสารอย่างเดียว</span><span class="lang-en">News only</span></label>
+                    </fieldset>
+                    <label class="signup-consent">
+                        <input type="checkbox" name="consent" required>
+                        <span class="lang-th">ยินยอมให้ทีม The Broken Seal เก็บอีเมลและคำตอบนี้ เพื่อส่งข่าวสารเกมและวางแผนการทดสอบ ยกเลิกรับข่าวได้ทุกเมื่อ</span>
+                        <span class="lang-en">I agree that The Broken Seal team may keep this email and these answers to send game news and plan the test. You can unsubscribe at any time.</span>
+                    </label>
+                    <button type="submit" class="btn-primary btn-xl glow-effect">
+                        <span class="lang-th">ลงทะเบียนรับข่าวสาร</span><span class="lang-en">Sign up for news</span>
+                    </button>
+                    <p class="signup-status" id="signupStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="assets/logo_cinzel.png" alt="The Broken Seal Logo" class="footer-logo">
+                <p class="footer-tagline">
+                    <span class="lang-th">"ไม่ใช่เจ้าที่เลือกอาวุธ… แต่อาวุธต่างหาก ที่เลือกเจ้า"</span>
+                    <span class="lang-en">"You don't choose the weapon. The weapon chooses you."</span>
+                </p>
+            </div>
+
+            <div class="footer-social">
+                <h4>
+                    <span class="lang-th">ติดตามข่าวสารการพัฒนา</span>
+                    <span class="lang-en">Follow Development</span>
+                </h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>Facebook Page</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Broken Seal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

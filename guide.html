@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คู่มือการเล่น | The Broken Seal</title>
+    <link rel="icon" type="image/png" href="assets/icon_1024.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Cinzel+Decorative:wght@700;900&family=Kanit:wght@400;500;600;700&family=Taviraj:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark lang-th">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/icon_1024.png" alt="The Broken Seal Icon" class="nav-icon">
+                <span class="brand-name">THE BROKEN SEAL</span>
+            </a>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <span class="lang-th">หน้าหลัก</span>
+                            <span class="lang-en">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#overview">
+                            <span class="lang-th">เรื่องราว</span>
+                            <span class="lang-en">Overview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#weapons">
+                            <span class="lang-th">4 อาวุธ</span>
+                            <span class="lang-en">Weapons</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#world">
+                            <span class="lang-th">3 ทวีป</span>
+                            <span class="lang-en">World</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html#seal-rift">
+                            <span class="lang-th">Seal Rift</span>
+                            <span class="lang-en">Seal Rift</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="guide.html" class="active">
+                            <span class="lang-th">คู่มือ</span>
+                            <span class="lang-en">Guide</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="langToggleBtn" class="btn-lang" aria-label="Switch Language">
+                    <span class="lang-th">EN</span>
+                    <span class="lang-en">TH</span>
+                </button>
+                <!-- TODO: The sign-up form URL will be added later -->
+                <a href="index.html#alpha-signup" class="btn-primary nav-cta">
+                    <span class="lang-th">สมัคร Alpha</span>
+                    <span class="lang-en">Join Alpha</span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- GUIDE HERO BANNER -->
+    <section class="guide-hero">
+        <div class="container">
+            <h1 class="guide-hero-title">
+                <span class="lang-th">คู่มือการเล่นเกม</span>
+                <span class="lang-en">Game Guide</span>
+            </h1>
+            <p class="guide-hero-subtitle">
+                <span class="lang-th">คำแนะนำเบื้องต้นสำหรับนักผจญภัยมือใหม่ในการก้าวสู่โลกแห่ง The Broken Seal</span>
+                <span class="lang-en">Essential guide for new adventurers stepping into the world of The Broken Seal</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS & NOTICE BAR -->
+    <section class="guide-toc-section">
+        <div class="container">
+            <!-- Alpha Notice Bar -->
+            <div class="alpha-notice-bar">
+                <span class="notice-icon">⚠️</span>
+                <span>
+                    <span class="lang-th">ตัวเลขและระบบอาจปรับระหว่างการทดสอบ Alpha</span>
+                    <span class="lang-en">Numbers and systems may change during the Alpha test.</span>
+                </span>
+            </div>
+
+            <!-- Table of Contents Card -->
+            <div class="toc-card frame-gold">
+                <h2 class="toc-title">
+                    <span class="lang-th">สารบัญระบบเกม</span>
+                    <span class="lang-en">Guide Contents</span>
+                </h2>
+                <div class="toc-grid">
+                    <a href="#getting-started" class="toc-item">
+                        <span class="toc-num">01</span>
+                        <span><span class="lang-th">การเริ่มต้นเล่น</span><span class="lang-en">Getting Started</span></span>
+                    </a>
+                    <a href="#levels-exp" class="toc-item">
+                        <span class="toc-num">02</span>
+                        <span><span class="lang-th">เลเวลและ EXP</span><span class="lang-en">Levels & EXP</span></span>
+                    </a>
+                    <a href="#weapons-class" class="toc-item">
+                        <span class="toc-num">03</span>
+                        <span><span class="lang-th">อาวุธคืออาชีพ</span><span class="lang-en">Weapons & Classes</span></span>
+                    </a>
+                    <a href="#combat-system" class="toc-item">
+                        <span class="toc-num">04</span>
+                        <span><span class="lang-th">ระบบการต่อสู้</span><span class="lang-en">Combat System</span></span>
+                    </a>
+                    <a href="#skill-mastery" class="toc-item">
+                        <span class="toc-num">05</span>
+                        <span><span class="lang-th">การอัปเกรดสกิล</span><span class="lang-en">Skill Upgrades</span></span>
+                    </a>
+                    <a href="#loot-items" class="toc-item">
+                        <span class="toc-num">06</span>
+                        <span><span class="lang-th">ของดรอปและไอเทม</span><span class="lang-en">Loot & Items</span></span>
+                    </a>
+                    <a href="#refining" class="toc-item">
+                        <span class="toc-num">07</span>
+                        <span><span class="lang-th">การตีบวกอุปกรณ์</span><span class="lang-en">Refining System</span></span>
+                    </a>
+                    <a href="#seal-rift" class="toc-item">
+                        <span class="toc-num">08</span>
+                        <span><span class="lang-th">Seal Rift (ดันเจี้ยนปาร์ตี้)</span><span class="lang-en">Seal Rift Dungeon</span></span>
+                    </a>
+                    <a href="#broken-rift" class="toc-item">
+                        <span class="toc-num">09</span>
+                        <span><span class="lang-th">Broken Rift (กิจกรรมมิติมืด)</span><span class="lang-en">Broken Rift Event</span></span>
+                    </a>
+                    <a href="#elite-hunts" class="toc-item">
+                        <span class="toc-num">10</span>
+                        <span><span class="lang-th">การล่าอีลีท (บอสโลก)</span><span class="lang-en">Elite Hunts (World Bosses)</span></span>
+                    </a>
+                    <a href="#mini-rift" class="toc-item">
+                        <span class="toc-num">11</span>
+                        <span><span class="lang-th">Mini Rift (รอยแยกมินิ)</span><span class="lang-en">Mini Rift Event</span></span>
+                    </a>
+                    <a href="#bag-storage" class="toc-item">
+                        <span class="toc-num">12</span>
+                        <span><span class="lang-th">กระเป๋าและคลัง</span><span class="lang-en">Bag & Storage</span></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- GUIDE CONTENT CARDS -->
+            <div class="guide-cards-container">
+
+                <!-- 1. Getting Started -->
+                <article id="getting-started" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">01</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">การเริ่มต้นเล่น</span>
+                            <span class="lang-en">Getting Started</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>สร้างตัวละคร:</strong> เลือกเพศ (ชาย/หญิง), เลือกทรงผม 4 แบบ, ปรับสีผม 8 สี และตั้งชื่อตัวละคร (2–12 ตัวอักษร)</span>
+                            <span class="lang-en"><strong>Character Creation:</strong> Choose your gender (Male/Female), select 1 of 4 hairstyles, pick 1 of 8 hair colors, and set a character name (2–12 characters).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>จุดเริ่มต้น:</strong> ออกเดินทางจากเมืองหลัก Eldoria Keep หลังผ่านเนื้อเรื่องบทนำ</span>
+                            <span class="lang-en"><strong>Starting Hub:</strong> Begin your journey from the capital city of Eldoria Keep after completing the prologue story.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เควสหลักคือกุญแจ:</strong> ทำเควสหลักเพื่อปลดล็อกพื้นที่ใหม่ จุดวาร์ป ระบบเกม และดันเจี้ยนต่างๆ</span>
+                            <span class="lang-en"><strong>Main Quest Keys:</strong> Complete main story quests to unlock new regions, warp waystones, game systems, and dungeons.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ตัวละครเดียว:</strong> เล่น 1 ตัวละครต่อ 1 เซิร์ฟเวอร์ และไม่สามารถข้ามเควสหลักได้</span>
+                            <span class="lang-en"><strong>Single Character:</strong> Play 1 character per server. Main story quests cannot be skipped.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 2. Levels and EXP -->
+                <article id="levels-exp" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">02</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">เลเวลและค่าประสบการณ์ (EXP)</span>
+                            <span class="lang-en">Levels & Experience (EXP)</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>แหล่ง EXP:</strong> ได้รับจากการสังหารมอนสเตอร์ ทำเควส ลงดันเจี้ยน และระบบ Auto Farming</span>
+                            <span class="lang-en"><strong>EXP Sources:</strong> Earn EXP by hunting monsters, completing quests, entering dungeons, and using Auto Farming.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ส่วนต่างเลเวล:</strong> ความห่างระหว่างเลเวลตัวละครและมอนสเตอร์มีผลต่อปริมาณ EXP ที่ได้รับ</span>
+                            <span class="lang-en"><strong>Level Gap:</strong> The difference between your level and the monster's level affects EXP gained.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>มอนสเตอร์อีลีท:</strong> อีลีทประจำแมพไม่ให้ EXP แต่จะได้รับของรางวัลไอเทมและอุปกรณ์คุณภาพสูง</span>
+                            <span class="lang-en"><strong>Elite Monsters:</strong> Elite area bosses grant no EXP, but award valuable loot and high-grade equipment.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>จังหวะการอัปเลเวล:</strong> ถูกออกแบบให้การเติบโตเป็นไปอย่างเป็นลำดับและเน้นความคุ้มค่า</span>
+                            <span class="lang-en"><strong>Deliberate Pace:</strong> Character levelling is intentionally designed with a deliberate, rewarding progression pace.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ระดับเลเวลทวีปเอลดอเรีย:</strong> Whisperwood (Lv 1–5), Thornveil Forest (Lv 5–10), Mirefen Marsh (Lv 10–15), Old Barrow Ruins (Lv 15–20)</span>
+                            <span class="lang-en"><strong>Eldoria Level Ranges:</strong> Whisperwood (Lv 1–5), Thornveil Forest (Lv 5–10), Mirefen Marsh (Lv 10–15), Old Barrow Ruins (Lv 15–20).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เกจฟาร์มรายวัน:</strong> จำกัดมอนสเตอร์ 2,700 ตัวต่อวัน ใช้ร่วมกันทั้งการเล่นเองและการออฟไลน์ Auto Farming</span>
+                            <span class="lang-en"><strong>Daily Farm Gauge:</strong> Limited to 2,700 monsters daily, shared between active manual play and offline Auto Farming.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 3. Weapons as Classes -->
+                <article id="weapons-class" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">03</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">อาวุธคืออาชีพ</span>
+                            <span class="lang-en">Weapons are Your Class</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>ไร้สายอาชีพ:</strong> ไม่มีอาชีพตายตัว สลับสวมใส่อาวุธเพื่อเปลี่ยนสายการเล่นได้ทันที (4 อาวุธ: ดาบโล่, มีดคู่, คทา, ธนู)</span>
+                            <span class="lang-en"><strong>Classless Freedom:</strong> No fixed classes. Equip any of the 4 weapon types (Sword & Shield, Dual Daggers, Staff, Bow) to define your combat role.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ระบบ Preset:</strong> จัดเก็บได้สูงสุด 2 Preset (จัดเก็บอาวุธ ชุดเกราะ การลง Stat แต้มสกิล และแถบสกิล)</span>
+                            <span class="lang-en"><strong>Preset System:</strong> Store up to 2 Presets containing your weapon, armor, stat allocation, skill tree, and skill bar.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>กติกาการสลับ:</strong> ปรับเปลี่ยน Preset ได้เฉพาะนอกการต่อสู้ และไม่สามารถสลับ Preset กลางการต่อสู้ได้</span>
+                            <span class="lang-en"><strong>Combat Rules:</strong> Presets can be edited and swapped outside combat only. Switching during combat is disabled.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>การจัดสรร Stat:</strong> ค่า STR, AGI, INT, VIT แยกบันทึกตามอาวุธในแต่ละ Preset อย่างอิสระ</span>
+                            <span class="lang-en"><strong>Per-Weapon Stats:</strong> STR, AGI, INT, and VIT point allocations are saved independently per weapon preset.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ผลของ Stat:</strong> STR เพิ่มพลังโจมตีกายภาพ, INT เพิ่มพลังโจมตีเวท/มานา, AGI เพิ่มความเร็วโจมตี/หลบหลีก, VIT เพิ่มพลังชีวิต</span>
+                            <span class="lang-en"><strong>Stat Benefits:</strong> STR increases physical ATK, INT increases magic ATK & MP, AGI increases attack speed & dodge, VIT increases HP.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 4. Combat System -->
+                <article id="combat-system" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">04</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">ระบบการต่อสู้</span>
+                            <span class="lang-en">Combat System</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>ปุ่มคอมโบ:</strong> กดโจมตีธรรมดาต่อเนื่องด้วยปุ่มคอมโบประจำสำนัก โดยไม่เสียค่า MP</span>
+                            <span class="lang-en"><strong>Combo Button:</strong> Execute basic weapon combo sequences without consuming any MP.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>สกิลคูลดาวน์:</strong> การออกสกิลเน้นการบริหารคูลดาวน์เป็นหลัก โดยใช้ MP เป็นรอง (การโจมตีโดนไม่ฟื้นฟู MP)</span>
+                            <span class="lang-en"><strong>Cooldown Focus:</strong> Skills rely primarily on cooldown management with low MP costs (hitting enemies does not restore MP).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>การหลบหลีกตามอาวุธ:</strong> ดาบโล่กลิ้งหลบ 2 ชาร์จ, มีดคู่พุ่งเงา 1 ครั้ง, ธนูเร่งความเร็วเคลื่อนที่, คทาสร้างบาเรียป้องกัน</span>
+                            <span class="lang-en"><strong>Weapon Dodge Mechanics:</strong> Sword & Shield rolls (2 charges), Dual Daggers shadow dashes, Bow gains movement speed, Staff creates a barrier.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เกจพลังประจำอาวุธ:</strong> ดาบโล่สะสม Guard จากการบล็อก/กระแทกโล่, มีดคู่สะสม Tempo จากการโจมตีต่อเนื่อง, คทาสร้าง Resonance จากการใช้สกิล, ธนูสะสม Focus จากการยืนยิงระยะไกล</span>
+                            <span class="lang-en"><strong>Weapon Gauges:</strong> Sword & Shield builds Guard by blocking/slamming, Dual Daggers build Tempo via fast hits, Staff builds Resonance by casting skills, Bow builds Focus by standing still and shooting from range.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>การปลดปล่อยเกจ:</strong> ปลดปล่อยเกจที่สะสมเพื่อคูณดาเมจสกิล ขยายวงกว้าง หรือระเบิดสถานะผิดปกติใส่ศัตรู</span>
+                            <span class="lang-en"><strong>Gauge Spending:</strong> Spend filled gauges to multiply skill damage, expand area radius, or trigger status detonations.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เกจ Ultimate:</strong> สะสมเกจจากการโจมตีและใช้สกิลโดนเป้าหมาย โดยท่า Ultimate จะผูกติดมากับอาวุธที่ดรอปในโลก</span>
+                            <span class="lang-en"><strong>Ultimate Gauge:</strong> Fills as combos and skills strike enemies. Ultimate abilities are bound to dropped weapons.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 5. Skill Upgrades -->
+                <article id="skill-mastery" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">05</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">การอัปเกรดสกิล (Weapon Mastery)</span>
+                            <span class="lang-en">Skill Upgrades (Weapon Mastery)</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>รับแต้ม Mastery:</strong> ได้รับแต้มสกิลจากการเพิ่มเลเวล Mastery ของอาวุธแต่ละประเภท</span>
+                            <span class="lang-en"><strong>Mastery Points:</strong> Earn skill points as you level up the Weapon Mastery of each specific weapon type.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>โครงสร้างผัง:</strong> ประกอบด้วยสายเริ่มต้น Martial Art + สายเฉพาะทางหลัก + สายเฉพาะทางรอง</span>
+                            <span class="lang-en"><strong>Tree Structure:</strong> Consists of a Foundation Martial Art path plus two specialized branches (Main and Secondary).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เงื่อนไขปลดล็อกสาย:</strong> สกิลขั้นสูง (สกิลที่ 5) และ Key Passive บังคับต้องมีแต้มสะสมในสายนั้นๆ ตามที่กำหนด</span>
+                            <span class="lang-en"><strong>Branch Gates:</strong> Tier 5 active skills and Tier 6 Key Passives require a specific minimum point investment within that branch.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>โหนดอัปเกรดพิเศษ:</strong> โหนด Enhanced เพิ่มการเปลี่ยนพฤติกรรมสกิล และโหนด Choice ให้เลือก 1 จาก 2 สไตล์การเล่น</span>
+                            <span class="lang-en"><strong>Special Nodes:</strong> Enhanced nodes change skill behavior (e.g., refunding cooldowns or mobility), while Choice nodes offer 1 of 2 playstyle variants.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>กติการีเซ็ตแต้ม:</strong> รีเซ็ตฟรีไม่จำกัดในช่วงเริ่มต้น (Mastery < 15) และรีเซ็ตฟรีสัปดาห์ละ 1 ครั้งต่อ Preset</span>
+                            <span class="lang-en"><strong>Respec Rules:</strong> Free unlimited resets during early levels (Mastery < 15), plus one free reset per week per Preset.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 6. Loot and Items -->
+                <article id="loot-items" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">06</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">ของดรอปและไอเทม</span>
+                            <span class="lang-en">Loot & Items</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>ระดับอุปกรณ์:</strong> แบ่งเป็น 4 เกรด — ฟ้า (ทั่วไป), ม่วง (หายาก), ส้ม (มหากาพย์), แดง (ตำนาน)</span>
+                            <span class="lang-en"><strong>Item Grades:</strong> Classified into 4 grades — Blue (Common), Purple (Rare), Orange (Epic), Red (Legendary).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>แหล่งดรอป:</strong> มอนสเตอร์ธรรมดาดรอปเฉพาะเกรดฟ้าและม่วง ส่วนเกรดส้มและแดงดรอปจากอีลีทและบอสรอยแยกเท่านั้น</span>
+                            <span class="lang-en"><strong>Drop Sources:</strong> Normal monsters drop only Blue and Purple gear. Orange and Red gear drop exclusively from Elites and Rift Bosses.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>อาวุธ Ultimate ผนึก:</strong> อาวุธส้มและแดงดรอปแบบผนึกไว้ ต้องปลดผนึกกับช่างตีเหล็กในเมืองเพื่อเปิดสุ่มสาย</span>
+                            <span class="lang-en"><strong>Sealed Ultimate Weapons:</strong> Orange and Red weapons drop sealed and must be unsealed at the town blacksmith to reveal their branch.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>การคราฟต์ Ultimate:</strong> สะสมเศษ Ultimate Fragment คราฟต์ได้เฉพาะอาวุธเกรดส้มเท่านั้น (เกรดแดงได้จากการดรอปด้วยโชค)</span>
+                            <span class="lang-en"><strong>Ultimate Crafting:</strong> Collect Ultimate Fragments to craft sealed Orange Ultimates only (Red Ultimates are drop-only luck).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ระบบ Personal Loot:</strong> สิทธิ์การดรอปคำนวณแยกรายบุคคลเมื่อทำส่วนร่วมถึงเกณฑ์ ไม่มีการแย่งไอเทมกัน</span>
+                            <span class="lang-en"><strong>Personal Loot:</strong> Loot rolls are calculated individually for each participant upon meeting contribution thresholds; items cannot be stolen.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>การเก็บของและขยะ:</strong> ขยะมอนสเตอร์ วัสดุ และเศษตีบวกเข้าแท็บวัสดุอัตโนมัติ นำไปขาย NPC ในเมืองเพื่อเปลี่ยนเป็นเงิน</span>
+                            <span class="lang-en"><strong>Loot & Monster Junk:</strong> Materials, shards, and monster junk auto-collect into the materials tab and sell to town vendors for gold.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 7. Refining System -->
+                <article id="refining" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">07</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">การตีบวกอุปกรณ์</span>
+                            <span class="lang-en">Refining System</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>ระดับการตีบวก:</strong> อัปเกรดความแข็งแกร่งของอุปกรณ์ได้ตั้งแต่ +0 ถึง +15</span>
+                            <span class="lang-en"><strong>Refining Range:</strong> Enhance equipment strength from +0 up to +15.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>อุปกรณ์ไม่มีวันแตก:</strong> การอัปเกรดล้มเหลวจะไม่ทำลายอุปกรณ์ให้สูญหาย</span>
+                            <span class="lang-en"><strong>No Destruction:</strong> Equipment never breaks or gets destroyed on upgrade failure.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ผลของการล้มเหลว:</strong> เสียเฉพาะวัสดุและเงินในการพยายาม โดยระดับการตีบวกยังคงเดิม</span>
+                            <span class="lang-en"><strong>Failure Cost:</strong> Failed attempts consume materials and gold only, retaining the current refine level.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>โบนัสการพยายาม:</strong> เมื่ออัปเกรดล้มเหลว การพยายามครั้งถัดไปจะได้รับโบนัสโอกาสสำเร็จเล็กน้อย (ไม่สะสมทับซ้อน)</span>
+                            <span class="lang-en"><strong>Failure Bonus:</strong> A failed attempt grants a small bonus chance to the immediate next attempt (non-stacking).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ออร่าเรืองแสง:</strong> อุปกรณ์จะแสดงเอฟเฟกต์ออร่าเรืองแสงเมื่ออัปเกรดถึงระดับ +7, +10 และ +15</span>
+                            <span class="lang-en"><strong>Refine Aura:</strong> Equipment displays a radiant glowing aura at +7, +10, and +15 thresholds.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 08. Seal Rift Dungeon -->
+                <article id="seal-rift" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">08</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">Seal Rift (ดันเจี้ยนปาร์ตี้มิติมืด)</span>
+                            <span class="lang-en">Seal Rift (Party Dungeon)</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>คืออะไร:</strong> ดันเจี้ยนอินสแตนซ์ปาร์ตี้ (Party Instance) ในมิติมืด รอยแยกผนึกสุ่มเปิดขึ้นบนแมพล่ามอนสเตอร์</span>
+                            <span class="lang-en"><strong>What it is:</strong> A spontaneous party instance dungeon in the dark rift dimension opening randomly on open hunting maps.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เกิดขึ้นเมื่อไหร่ ที่ไหน:</strong> เปิดสุ่มบนแมพล่ามอนสเตอร์ทุกๆ 4 ชั่วโมง ประตุมิติต้องเข้าภายใน 1 ชั่วโมง เลเวลดันเจี้ยนเท่ากับ World Level ของเซิร์ฟเวอร์ (ส่วนกฎการจำกัดเลเวลผู้เล่นต่างเลเวลในปาร์ตี้จะประกาศภายหลัง)</span>
+                            <span class="lang-en"><strong>When & Where:</strong> Opens randomly on hunting maps in various continents every 4 hours; the gate remains open for 1 hour. Dungeon level matches the server's World Level (level restriction rules for mixed-level party members to be announced).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ใครเข้าร่วมได้บ้าง:</strong> ปาร์ตี้สูงสุด 4 คน (เล่นคนเดียวได้ แต่ความยากคงเดิมไม่ลดตามจำนวนคน) แต่ละปาร์ตี้ได้รับ Instance แยกเฉพาะของตนเอง</span>
+                            <span class="lang-en"><strong>Who can join:</strong> Party size up to 4 players (can enter solo, but difficulty remains constant regardless of party size). Each party receives its own separate instance.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>จำนวนครั้ง:</strong> สิทธิ์เข้าดันเจี้ยน 5 ครั้งต่อสัปดาห์ (พิเศษช่วงเปิดเซิร์ฟเวอร์ใหม่ +2 รวมเป็น 7 ครั้งต่อสัปดาห์)</span>
+                            <span class="lang-en"><strong>Frequency & Limit:</strong> 5 entry rights per week (special launch period bonus +2, total 7 per week).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ทำอะไรข้างใน:</strong> ลุย 2 ชั้น + ห้องบอส (ใช้เวลาประมาณ 15–20 นาที ผังแผนที่สุ่ม 5 แบบต่อชั้น มีหมอกบดบัง) ปราบมอนสเตอร์ Keybearer นำกุญแจไขประตูเปิดชั้นถัดไป (มีระบบ Pity รับประกันกุญแจดรอปเมื่อกำจัดมอนสเตอร์ในชั้นครบ 70%) ปราบมอนสเตอร์ดันเจี้ยนสุ่ม 4 ชนิดจาก 8 ชนิด และสู้กับบอสสุ่มจาก 10 ธีมที่เน้นกลไกและความร่วมมือในปาร์ตี้ (ตัวอย่างบอสผู้พิทักษ์ เช่น Oathbound Warden, Twin Wardens หรือบอสสิ่งมีชีวิตมิติมืด เช่น Maw of Abyssara)</span>
+                            <span class="lang-en"><strong>Gameplay & Objectives:</strong> Traverse 2 floors plus a boss chamber (takes ~15–20 minutes, 5 randomized layouts per floor under fog of war). Defeat the Keybearer to obtain the floor key (guaranteed key drop pity after 70% floor clear). Fight 4 randomly selected dungeon monster types out of 8, and defeat a thematic boss randomly chosen from 10 themes focusing on telegraphed combat mechanics and party cooperation (e.g., guardian bosses like Oathbound Warden or Twin Wardens, or Abyssara creatures like Maw of Abyssara).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ได้อะไรเป็นรางวัล:</strong> หีบรางวัลส่วนตัวประจำตัวผู้เล่นแต่ละคนเมื่อพิชิตบอส ได้รับโบนัส EXP, เศษตีบวก (Refine Shards) เช่น 5 ชิ้น, หินขัดเงา (Polishing Stones) 3 ชิ้น และมีโอกาสได้รับอุปกรณ์เกรดส้ม/แดง, อาวุธ Ultimate หรือเศษ Ultimate Fragment</span>
+                            <span class="lang-en"><strong>Rewards:</strong> Personal loot chest per player upon boss defeat. Grants bonus EXP, Refine Shards (e.g., 5 shards), Polishing Stones (3 stones), and personal rolls for Orange/Red gear, Ultimate weapons, or Ultimate Fragments.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 09. Broken Rift Event -->
+                <article id="broken-rift" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">09</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">Broken Rift (อีเว้นท์มิติปริแตก)</span>
+                            <span class="lang-en">Broken Rift (Map Event)</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>คืออะไร:</strong> อีเว้นท์ประจำวันบนแมพล่ามอนสเตอร์เมื่อมิติรอยแยกปริแตกและปล่อยพลังรั่วไหล ยกระดับมอนสเตอร์ทั้งแมพขึ้นเป็น World Level ชั่วคราว</span>
+                            <span class="lang-en"><strong>What it is:</strong> Daily open map event where rift energy leaks across an entire map channel, temporarily raising all area monsters to the server's World Level.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เกิดขึ้นเมื่อไหร่ ที่ไหน:</strong> เกิดขึ้นวันละ 3 รอบ รอบละประมาณ 30 นาที เกิดเฉพาะบน Channel ที่กำหนดของแมพนั้นๆ (เช่น Channel 1 (Broken Rift)) โดยระบบสุ่มเลือกแมพ เน้นแมพเริ่มต้นและแมพเลเวลต่ำเพื่อดึงผู้เล่นเลเวลสูงกลับมาแมพเก่า บรรยากาศแมพจะมืดลงโทนแดงม่วง และมอนสเตอร์ที่ถูกยกเลเวลจะมีวงแหวนเวทสีแดงที่เท้า</span>
+                            <span class="lang-en"><strong>When & Where:</strong> Occurs 3 times a day for ~30 minutes per round strictly on designated map channels (e.g., Channel 1 (Broken Rift)). Randomly targets maps with emphasis on starter and lower-level maps to draw high-level players back. The sky darkens with red-purple mist, and affected monsters display a red magic aura ring beneath their feet.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ใครเข้าร่วมได้บ้าง:</strong> ผู้เล่นเดี่ยวหรือปาร์ตี้ทุกคนที่เดินทางเข้าร่วมใน Channel กิจกรรม (Channel อื่นๆ เล่นตามปกติ ไม่บังคับผู้เล่นใหม่)</span>
+                            <span class="lang-en"><strong>Who can join:</strong> Solo players or parties in that designated channel (other channels run normally so new players aren't forced into high-level combat).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>จำนวนครั้ง:</strong> วันละ 3 รอบ ไม่จำกัดจำนวนครั้งในการเข้าร่วมล่าระหว่างช่วงกิจกรรม</span>
+                            <span class="lang-en"><strong>Frequency & Limit:</strong> Runs 3 times daily; no restriction on participation frequency during active event rounds.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ทำอะไรข้างใน:</strong> ร่วมกันฟาร์มและสังหารมอนสเตอร์ทั่วแมพที่ยกระดับความถึกและพลังโจมตีเท่ากับ World Level เพื่อฟาร์มทรัพยากรอัตราดรอปพิเศษ</span>
+                            <span class="lang-en"><strong>Gameplay & Objectives:</strong> Hunt and farm monsters across the map whose stats have scaled up to the server World Level for high-yield material drops.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ได้อะไรเป็นรางวัล:</strong> ได้รับขยะมอนสเตอร์ดรอปเพิ่มเป็น 2 เท่า (Junk x2) และเศษตีบวกดรอปเพิ่มเป็น 2 เท่า (Refine Shards x2) เหมาะสำหรับการฟาร์มเงินและวัสดุตีบวก</span>
+                            <span class="lang-en"><strong>Rewards:</strong> Double monster junk drop rates (Junk x2) and double refine shard drop rates (Refine Shards x2), ideal for gold and refining material farming.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 10. Elite Hunts -->
+                <article id="elite-hunts" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">10</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">การล่าอีลีท (บอสโลก)</span>
+                            <span class="lang-en">Elite Hunts (World Bosses)</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>คืออะไร:</strong> บอสโลกประจำแมพล่ามอนสเตอร์ มีความถึกและพลังโจมตีสูงมาก ไม่โจมตีผู้เล่นก่อน (จะสู้กลับเมื่อโดนโจมตี)</span>
+                            <span class="lang-en"><strong>What it is:</strong> Open-world area bosses spawned in open hunting maps. Extremely tough and powerful, remaining passive until struck.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เกิดขึ้นเมื่อไหร่ ที่ไหน:</strong> เกิดตามช่วงเวลาและสุ่มตำแหน่งในแมพล่ามอนสเตอร์ (อย่างน้อย 4 ตัวต่อทวีป / แมพละ 1 ตัว เช่น ตัวอย่างในทวีป Eldoria: Warchief ใน Whisperwood, Alpha Direwolf ใน Thornveil Forest, Bog Matriarch ใน Mirefen Marsh, Barrow King ใน Old Barrow Ruins) เมื่อเกิดจะสุ่มระดับ Tier: Normal (เลเวลแมพ 50%), Veteran (กึ่งกลาง 35%), Champion (World Level 15%)</span>
+                            <span class="lang-en"><strong>When & Where:</strong> Spawns at set time intervals in randomized locations across hunting maps (at least 4 per continent / 1 per map, e.g. in Eldoria: Warchief in Whisperwood, Alpha Direwolf in Thornveil Forest, Bog Matriarch in Mirefen Marsh, Barrow King in Old Barrow Ruins). Randomly rolls a tier on spawn: Normal (map level 50%), Veteran (mid-tier 35%), Champion (World Level 15%).</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ใครเข้าร่วมได้บ้าง:</strong> ผู้เล่นทุกคนในแมพสามารถร่วมมือกันรุมตีได้แบบ Open World ไม่จำกัดขนาดปาร์ตี้</span>
+                            <span class="lang-en"><strong>Who can join:</strong> Open to everyone in the map; any solo player or party can combine forces to fight the world boss together.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>จำนวนครั้ง:</strong> สิทธิ์การรับของรางวัลจำกัด 3 ครั้งต่อวัน (พิเศษช่วงเปิดเซิร์ฟเวอร์ใหม่ +2 รวมเป็น 5 ครั้งต่อวัน) นับรวมทุกอีลีท เมื่อหมดสิทธิ์แล้วยังสามารถช่วยผู้เล่นอื่นตีได้แต่จะไม่ได้รับของรางวัล</span>
+                            <span class="lang-en"><strong>Frequency & Limit:</strong> Daily reward rights are limited to 3 times per day (special launch bonus +2, total 5 times per day) across all Elites. After using all rights, players can still assist others but receive no loot.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ทำอะไรข้างใน:</strong> ร่วมมือกับผู้เล่นอื่นในแมพปราบอีลีท (ใช้เวลาประมาณ 3–6 นาที) โดยผู้เล่นต้องทำส่วนร่วมอย่างน้อย 1% (ทำดาเมจ, รับดาเมจ, ฮีล หรือ Break) และอยู่ในระยะเพื่อรับสิทธิ์ดรอปรางวัล</span>
+                            <span class="lang-en"><strong>Gameplay & Objectives:</strong> Engage in open-world group battles against the Elite (takes ~3–6 minutes). Players must reach at least 1% contribution (damage dealt, damage taken, healing, or Break) and stay within range to qualify for reward rolls.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ได้อะไรเป็นรางวัล:</strong> มอนสเตอร์อีลีทไม่ให้ EXP แต่จะได้รับของรางวัลการันตี (ขยะอีลีท วัสดุประจำตัว) + หินขัดเงา (Polishing Stone) 1 ชิ้นต่อสิทธิ์รางวัล พร้อมสิทธิ์สุ่มรางวัลส่วนตัวสำหรับอุปกรณ์เกรดสูง (ส้ม/แดง) และวัสดุคราฟต์อาวุธ Ultimate (มีระบบ Pity รับประกัน)</span>
+                            <span class="lang-en"><strong>Rewards:</strong> Elites grant NO EXP. Each claimed reward right guarantees base loot (Elite materials & junk) + 1 Polishing Stone, plus a personal roll for high-grade gear (Orange/Red) and Ultimate weapon materials (with a Pity counter).</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 11. Mini Rift Event -->
+                <article id="mini-rift" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">11</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">Mini Rift (รอยแยกมินิประจำแมพ)</span>
+                            <span class="lang-en">Mini Rift (Map Event)</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>คืออะไร:</strong> รอยแยกมินิสุ่มเปิดขึ้นกลางแมพล่ามอนสเตอร์ ประกาศผ่านระบบแชต แสดงมาร์กเกอร์บนมินิแมพ และมีเสาแสงสีม่วงพุ่งขึ้นฟ้ามองเห็นได้จากระยะไกล</span>
+                            <span class="lang-en"><strong>What it is:</strong> A spontaneous mini rift opening in open hunting maps, announced via system chat, marked on the minimap, and emitting a tall purple light pillar visible from afar.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>เกิดขึ้นเมื่อไหร่ ที่ไหน:</strong> เกิดสุ่มทุกๆ 10–15 นาทีต่อ Channel บนพื้นแมพล่ามอนสเตอร์ (ห่างจากจุดเกิดแคมป์ มอนสเตอร์ และจุดวาร์ปอย่างน้อย 25 เมตร) หากไม่มีผู้เล่นเข้าไปใกล้ภายใน 3 นาที รอยแยกจะปิดตัวลง</span>
+                            <span class="lang-en"><strong>When & Where:</strong> Opens randomly every 10–15 minutes per channel on walkable open ground (at least 25 meters away from camps and warps). If no player approaches within 3 minutes, the rift collapses and disappears.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ใครเข้าร่วมได้บ้าง:</strong> เริ่มทำงานเมื่อผู้เล่นใดๆ เข้าใกล้ในระยะ 12 เมตร เหมาะสำหรับผู้เล่นเดี่ยวหรือปาร์ตี้ขนาดเล็กบริเวณนั้น</span>
+                            <span class="lang-en"><strong>Who can join:</strong> Triggers when any player comes within 12 meters; ideal for solo players or small nearby parties in the map.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>จำนวนครั้ง:</strong> เกิดขึ้นต่อเนื่องทุก 10–15 นาทีต่อ Channel ไม่จำกัดจำนวนครั้งในการเล่นต่อวัน</span>
+                            <span class="lang-en"><strong>Frequency & Limit:</strong> Spawns continuously every 10–15 minutes per channel; no daily participation limit.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ทำอะไรข้างใน:</strong> รับมือกับฝูงมอนสเตอร์มิติมืด 3 ระลอก (วินาทีที่ 0, 20 และ 40 จำนวน 6, 8 และ 10 ตัว) โดยระลอกที่ 3 จะมีมอนสเตอร์พิเศษ "Rift Champion" (เลือด 3 เท่า พร้อมออร่าสีม่วง) ต้องปราบมอนสเตอร์ทั้งหมดให้หมดภายใน 75 วินาที</span>
+                            <span class="lang-en"><strong>Gameplay & Objectives:</strong> Fight 3 waves of rift monsters spawning at 0s, 20s, and 40s (6, 8, and 10 monsters). Wave 3 includes a "Rift Champion" (3x HP with a purple aura). All monsters must be cleared within 75 seconds.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ได้อะไรเป็นรางวัล:</strong> หากทำสำเร็จในเวลา หีบรางวัลส่วนตัวจะปรากฏขึ้น ผู้เล่นที่มีส่วนร่วมอย่างน้อย 1% จะได้รับโบนัส EXP, เศษตีบวก (Refine Shards) 3 ชิ้น และมีโอกาสลุ้นรับอุปกรณ์</span>
+                            <span class="lang-en"><strong>Rewards:</strong> Upon clearing all waves in time, a personal reward chest appears. Participating players with at least 1% contribution receive bonus EXP, 3 Refine Shards, and a chance for equipment gear.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- 12. Bag and Storage -->
+                <article id="bag-storage" class="guide-card frame-gold">
+                    <div class="guide-card-header">
+                        <div class="guide-card-num">12</div>
+                        <h2 class="guide-card-title">
+                            <span class="lang-th">กระเป๋าและคลัง</span>
+                            <span class="lang-en">Bag & Storage</span>
+                        </h2>
+                    </div>
+                    <ul class="guide-bullets">
+                        <li>
+                            <span class="lang-th"><strong>กระเป๋าใส่อุปกรณ์:</strong> กระเป๋าตารางขนาด 10x6 ช่อง ต้องบริหารพื้นที่พกพา</span>
+                            <span class="lang-en"><strong>Equipment Grid Bag:</strong> A 10x6 grid inventory requiring strategic space management.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>แท็บวัสดุและยา:</strong> แยกแท็บเก็บวัสดุ ขยะ ยา และเศษตีบวก ซ้อนได้สูงสุด 999 ชิ้น ไม่กินพื้นที่ตารางอุปกรณ์</span>
+                            <span class="lang-en"><strong>Materials Tab:</strong> Separate inventory tab stacking materials, junk, potions, and shards up to 999 per slot without consuming grid space.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>คลังในเมือง:</strong> คลังฝากของขนาดใหญ่ในเมืองหลักสำหรับฝากเก็บไอเทมอย่างปลอดภัย</span>
+                            <span class="lang-en"><strong>Town Storage:</strong> Spacious town stash grid for storing equipment and valuable items safely.</span>
+                        </li>
+                        <li>
+                            <span class="lang-th"><strong>ระบบขายขยะ:</strong> ขายขยะมอนสเตอร์ในแท็บวัสดุให้ NPC ร้านค้าในเมืองเพื่อเปลี่ยนเป็นเงินทุน</span>
+                            <span class="lang-en"><strong>Junk Sales:</strong> Sell accumulated monster junk from the materials tab to town vendors for gold.</span>
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <img src="assets/logo_cinzel.png" alt="The Broken Seal Logo" class="footer-logo">
+                <p class="footer-tagline">
+                    <span class="lang-th">"ไม่ใช่เจ้าที่เลือกอาวุธ… แต่อาวุธต่างหาก ที่เลือกเจ้า"</span>
+                    <span class="lang-en">"You don't choose the weapon. The weapon chooses you."</span>
+                </p>
+            </div>
+
+            <div class="footer-social">
+                <h4>
+                    <span class="lang-th">ติดตามข่าวสารการพัฒนา</span>
+                    <span class="lang-en">Follow Development</span>
+                </h4>
+                <div class="social-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>Facebook Page</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Broken Seal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
