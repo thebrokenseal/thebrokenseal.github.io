@@ -1,12 +1,13 @@
 /**
  * Update 2026-10-29:
  *  - monsters from the game (Eldoria, PixelLab sprites) wander along the bottom of the page; click one to knock it
- *    out with its in-game launch or shatter animation. A toggle hides them (remembered per visitor).
+ *    out with its in-game launch or shatter animation. A monster that walks into a button dies the same way, so
+ *    buttons are never covered (user 2026-10-29). A toggle hides them (remembered per visitor).
  *  - gameplay video chapters jump the video to their time.
  */
 (() => {
-    // sheet pixels -> screen pixels (the sprites are 192/256 px frames); smaller on phones so they don't cover buttons
-    const SCALE = window.innerWidth < 700 ? 0.36 : 0.5;
+    // sheet pixels -> screen pixels (the sprites are 192/256 px frames)
+    const SCALE = window.innerWidth < 700 ? 0.42 : 0.5;
     const WALK_FPS = 10, DIE_FPS = 14;
     const TYPES = ['Goblin', 'GoblinBomber', 'BriarBoar', 'ThornbackWolf', 'BarrowSkeleton', 'ThornSprite', 'LizardSpearman'];
 
@@ -54,7 +55,7 @@
         toggle.addEventListener('click', () => { hidden = !hidden; storageSet('tbs_monsters_hidden', hidden ? '1' : '0'); label(); });
         label();
 
-        const count = () => (window.innerWidth < 700 ? 1 : 4);
+        const count = () => (window.innerWidth < 700 ? 3 : 5);
         const list = [];
 
         function spawn(fromEdge) {
@@ -79,6 +80,30 @@
             list.push(m);
         }
 
+        // buttons and links near the bottom of the screen; a monster that touches one is knocked out
+        const BUTTONS = 'a.btn-primary, a.btn-secondary, button:not(.monster-toggle), input, select, .video-play-toggle, .toc-item, .gameplay-chapters li, .social-btn';
+        let nextBump = 0;
+        let nextButtonKill = 0;   // one button knock-out at a time, so a full-width button doesn't wipe them all out
+        function bumpIntoButtons(now) {
+            if (now < nextBump) return;
+            nextBump = now + 120;
+            const h = window.innerHeight;
+            const rects = [];
+            document.querySelectorAll(BUTTONS).forEach(b => {
+                const r = b.getBoundingClientRect();
+                if (r.width > 0 && r.bottom > h - 140 && r.top < h) rects.push(r);
+            });
+            if (!rects.length) return;
+            for (const m of list) {
+                if (m.dead) continue;
+                const left = m.x + m.size * 0.3, right = m.x + m.size * 0.7, top = h - 4 - m.size * 0.65, bottom = h - 4;
+                const over = rects.some(r => left < r.right && right > r.left && top < r.bottom && bottom > r.top);
+                if (over && now >= nextButtonKill) { nextButtonKill = now + 4000; knockOut(m); continue; }
+                // the rest walk past without blocking the button: taps go through to it
+                m.el.style.pointerEvents = over ? 'none' : '';
+            }
+        }
+
         function knockOut(m) {
             if (m.dead) return;
             m.dead = true;
@@ -98,11 +123,37 @@
 
         for (let i = 0; i < count(); i++) spawn(false);
 
+        // the first visit: a small hint, floating over a living monster, that monsters can be clicked
+        let hint = null;
+        if (storageGet('tbs_monster_hint') !== '1') {
+            setTimeout(() => {
+                if (hidden) return;
+                const tip = document.createElement('div');
+                tip.className = 'monster-hint';
+                tip.innerHTML = '<span class="lang-th">แตะมอนดูสิ!</span><span class="lang-en">Tap a monster!</span>';
+                layer.appendChild(tip);
+                hint = { tip, m: null, until: performance.now() + 6000 };
+                storageSet('tbs_monster_hint', '1');
+            }, 2500);
+        }
+        function placeHint(now) {
+            if (!hint) return;
+            if (now > hint.until) { hint.tip.remove(); hint = null; return; }
+            if (!hint.m || hint.m.dead) hint.m = list.find(x => !x.dead) || null;
+            hint.tip.style.display = hint.m ? '' : 'none';
+            if (hint.m) {
+                hint.tip.style.left = (hint.m.x + hint.m.size / 2) + 'px';
+                hint.tip.style.bottom = (hint.m.size * 0.85) + 'px';
+            }
+        }
+
         let last = performance.now();
         function tick(now) {
             const dt = Math.min(0.1, (now - last) / 1000);
             last = now;
             if (!hidden && !document.hidden) {
+                bumpIntoButtons(now);
+                placeHint(now);
                 const w = window.innerWidth;
                 for (let i = list.length - 1; i >= 0; i--) {
                     const m = list[i];
