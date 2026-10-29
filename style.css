@@ -1478,3 +1478,57 @@ h4 { font-size: 1.2rem; }
 @media (max-width: 380px) {
     .hud-shapes { grid-template-columns: 1fr; }
 }
+
+/* --- Update 2026-10-29: gameplay video, Ultimates, combo guide, wandering monsters --- */
+.gameplay-player { max-width: 1040px; margin: 0 auto; padding: 6px; }
+.gameplay-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; }
+.gameplay-chapters {
+    list-style: none; padding: 0; margin: 1.25rem auto 0; max-width: 1040px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem;
+}
+.gameplay-chapters li {
+    display: flex; gap: 0.6rem; align-items: baseline; cursor: pointer;
+    padding: 0.55rem 0.8rem; border: 1px solid var(--gold-dark); border-radius: 6px;
+    background: rgba(20, 20, 28, 0.7); font-family: var(--font-ui); font-size: 0.95rem;
+    transition: border-color 0.2s, background 0.2s;
+}
+.gameplay-chapters li:hover, .gameplay-chapters li:focus-visible { border-color: var(--gold-primary); background: rgba(40, 30, 50, 0.85); outline: none; }
+.gameplay-chapters li.is-current { border-color: var(--gold-bright); }
+.ch-time { color: var(--gold-primary); font-variant-numeric: tabular-nums; min-width: 2.6em; }
+
+.ultimates-block { margin: 3rem auto 0; padding: 1.75rem; max-width: 1100px; }
+.ultimates-block h3 { color: var(--gold-bright); text-align: center; margin-bottom: 0.75rem; }
+.ultimates-block > p { max-width: 820px; margin: 0 auto; text-align: center; }
+.ult-list {
+    list-style: none; padding: 0; margin: 1.5rem 0 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem 1.5rem;
+}
+.ult-list li { padding: 0.5rem 0; border-bottom: 1px solid rgba(212, 175, 55, 0.15); }
+.ult-list strong { color: var(--rift-glow); font-family: var(--font-ui); margin-right: 0.5rem; }
+@media (max-width: 768px) { .ult-list { grid-template-columns: 1fr; } }
+
+.guide-subtitle { color: var(--gold-primary); font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+.guide-subtitle:first-of-type { margin-top: 0.5rem; }
+
+/* Monsters from the game wandering along the bottom of the page; click one to knock it out */
+.monster-layer { position: fixed; left: 0; right: 0; bottom: 0; height: 130px; pointer-events: none; z-index: 40; overflow: hidden; }
+.monster {
+    position: absolute; left: 0; bottom: 4px; pointer-events: auto; cursor: pointer;
+    background-repeat: no-repeat; image-rendering: pixelated; image-rendering: crisp-edges;
+    filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.55));
+}
+.monster.is-dead { cursor: default; pointer-events: none; }
+.monster-toggle {
+    position: fixed; right: 14px; bottom: 14px; z-index: 41;
+    font-family: var(--font-ui); font-size: 0.8rem; padding: 0.35rem 0.7rem;
+    color: var(--text-muted); background: rgba(11, 10, 15, 0.8); border: 1px solid var(--gold-dark); border-radius: 999px; cursor: pointer;
+}
+.monster-toggle:hover { color: var(--gold-bright); border-color: var(--gold-primary); }
+.monster-pop {
+    position: absolute; bottom: 70px; pointer-events: none; font-family: var(--font-ui); font-weight: 800;
+    color: var(--gold-bright); text-shadow: 0 2px 0 #000, 0 0 8px rgba(212, 175, 55, 0.6);
+    animation: monsterPop 0.8s ease-out forwards;
+}
+@keyframes monsterPop { from { transform: translateY(0); opacity: 1; } to { transform: translateY(-40px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .monster-layer, .monster-toggle { display: none; } }
+.ult-teaser { max-width: 820px; margin: 1rem auto 0; text-align: center; color: var(--rift-glow); font-style: italic; }
