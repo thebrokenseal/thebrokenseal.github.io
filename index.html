@@ -206,8 +206,8 @@
                                 <span class="lang-en">Classless System</span>
                             </h4>
                             <p>
-                                <span class="lang-th">ไม่มีอาชีพตายตัว อาวุธคืออาชีพ! สลับอาวุธเพื่อเปลี่ยนสายการต่อสู้ได้ทันที</span>
-                                <span class="lang-en">No fixed class restrictions. Your weapon defines your class and combat style.</span>
+                                <span class="lang-th">ไม่มีอาชีพตายตัว อาวุธคืออาชีพ! ตัวละครเดียวฝึกได้ทุกอาวุธ จัดอาวุธไว้ 2 ชุด (Preset) แล้วสลับนอกการต่อสู้</span>
+                                <span class="lang-en">No fixed class: your weapon is your class. One character can train every weapon, keep two weapon presets and swap between them out of combat.</span>
                             </p>
                         </div>
                     </div>
@@ -537,8 +537,8 @@
                     <span class="lang-en">Weapons and Their Legends</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="lang-th">อาวุธแต่ละชิ้นเก็บความทรงจำของวีรชน 1 คน ทุกสกิลคือฉากหนึ่งในความทรงจำนั้น · ตอนนี้เปิดให้ใช้ 4 อาวุธ อาวุธละ 2 สาย แต่ละสายมีกลไกเด่นของตัวเอง</span>
-                    <span class="lang-en">Each weapon keeps the memory of one hero, and every skill is a scene from it · four weapons are open for now, two lines each, each with its own signature mechanic</span>
+                    <span class="lang-th">อาวุธแต่ละชิ้นเก็บความทรงจำของวีรชน 1 คน ทุกสกิลคือฉากหนึ่งในความทรงจำนั้น · ตอนนี้เปิดให้ใช้ 4 อาวุธ สกิลของแต่ละอาวุธจัดเป็น 2 ตำนานย่อยให้ดูง่าย แต่ไม่ล็อกสาย หยิบมาผสมใส่แถบสกิล 4 ช่อง + Ultimate ได้ตามงานที่จะไป (ระบบสกิลแบบใหม่ กำลังพัฒนา)</span>
+                    <span class="lang-en">Each weapon keeps the memory of one hero, and every skill is a scene from it · four weapons are open for now. Each weapon's skills are grouped into two legends for easy reading, but nothing is locked: mix them into a 4-slot bar + Ultimate for the job ahead (new skill system, in development)</span>
                 </p>
                 <div class="title-divider"><img src="assets/shield_intact_1.png" alt="Shield Emblem" class="divider-icon"></div>
             </div>
@@ -733,6 +733,32 @@
                     <span class="lang-en">* Still being tested and may change.</span>
                 </p>
             </div>
+
+            <!-- Weapon skills: rare affix that fires on its own -->
+            <div id="weapon-skills" class="ultimates-block frame-gold">
+                <h3>
+                    <span class="lang-th">สกิลติดอาวุธ: ของหายากที่ทำงานเอง</span>
+                    <span class="lang-en">Weapon Skills: Rare Lines That Fire on Their Own</span>
+                </h3>
+                <p>
+                    <span class="lang-th">อาวุธเกรดส้มและแดงบางชิ้นดรอปมาพร้อมสกิลติดตัว 1 อย่าง ทำงานเองเมื่อเงื่อนไขครบ "เมื่อ… จาก… จะเกิด…" ไม่กินช่องค่าพิเศษ และช่างตีเหล็ก Roll ใหม่ไม่ได้ เจอชิ้นที่เข้ากับสไตล์ตัวเองถือเป็นโชค</span>
+                    <span class="lang-en">Some Orange and Red weapons drop with one built-in skill that fires by itself when its condition is met: "when… from… then…". It takes no affix slot and the blacksmith cannot reroll it, so finding one that fits your style is real luck.</span>
+                </p>
+                <div class="zones-list weapon-skill-list">
+                    <span class="zone-pill"><span class="lang-th">ปราการโล่: โดนตีประชิด → รับดาเมจลดลง</span><span class="lang-en">Gate Bulwark: hit in melee → take less damage</span></span>
+                    <span class="zone-pill"><span class="lang-th">ใจสู้ยักษ์: โดน Elite หรือบอสตี → ATK เพิ่ม</span><span class="lang-en">Giant's Heart: hit by an Elite or boss → more ATK</span></span>
+                    <span class="zone-pill"><span class="lang-th">แสงทองสมาน: เลือดต่ำ → ฟื้นเลือด</span><span class="lang-en">Golden Mend: low health → heal</span></span>
+                    <span class="zone-pill"><span class="lang-th">ด้ายรั้ง: สกิลโดนมอน → มัดมอนรอบข้าง</span><span class="lang-en">Binding Thread: skill hits → bind nearby monsters</span></span>
+                </div>
+                <p class="ult-teaser">
+                    <span class="lang-th">ยังมีอีกหลายแบบ ลองออกล่าแล้วดูว่าอาวุธชิ้นไหนจะเป็นของคุณ</span>
+                    <span class="lang-en">There are more to find. Go hunting and see which weapon becomes yours.</span>
+                </p>
+                <p class="section-note">
+                    <span class="lang-th">* ยังอยู่ระหว่างทดสอบ ชื่อและตัวเลขอาจเปลี่ยนแปลงได้</span>
+                    <span class="lang-en">* Still being tested; names and numbers may change.</span>
+                </p>
+            </div>
         </div>
     </section>
 
@@ -811,6 +837,32 @@
                         <span class="zone-pill">Aurora Sanctum</span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Elite: map world bosses -->
+            <div id="elite" class="ultimates-block frame-gold">
+                <h3>
+                    <span class="lang-th">Elite: บอสโลกประจำแมพ</span>
+                    <span class="lang-en">Elite: Each Map's World Boss</span>
+                </h3>
+                <p>
+                    <span class="lang-th">ทุกแมพล่ามอนมีบอสโลกของตัวเองที่เข้ากับภูมิประเทศ สูงราว 8 เมตร เกิดตามเวลาในจุดสุ่มของแมพ และจะไม่ตีใครก่อนจนกว่าจะโดนโจมตี ทุกคนบนแมพรุมตีพร้อมกันได้ ยิ่งคนมาก บอสยิ่งถึก</span>
+                    <span class="lang-en">Every hunting map has its own world boss that fits its land: about 8 metres tall, it appears on a timer at a random spot and won't attack until someone strikes first. Everyone on the map can join in, and the more who join, the tougher it gets.</span>
+                </p>
+                <div class="zones-list weapon-skill-list">
+                    <span class="zone-pill"><span class="lang-th">ของรางวัลแยกรายคน ไม่ต้องแย่งกัน</span><span class="lang-en">Rewards rolled per player, no fighting over loot</span></span>
+                    <span class="zone-pill"><span class="lang-th">ทุกบทบาทนับ: ดาเมจ ฮีล รับดาเมจ หรือ Break</span><span class="lang-en">Every role counts: damage, healing, tanking or Break</span></span>
+                    <span class="zone-pill"><span class="lang-th">ลุ้นวัสดุ Ultimate</span><span class="lang-en">A chance at Ultimate materials</span></span>
+                    <span class="zone-pill"><span class="lang-th">ไม่ให้ EXP ล่าเพื่อของล้วน ๆ</span><span class="lang-en">No EXP: you hunt it for the loot</span></span>
+                </div>
+                <p class="ult-teaser">
+                    <span class="lang-th">ดูการต่อสู้จริงกับ Goblin Warchief ได้ในวิดีโอปาร์ตี้ด้านบน</span>
+                    <span class="lang-en">See a real fight with the Goblin Warchief in the party video above.</span>
+                </p>
+                <p class="section-note">
+                    <span class="lang-th">* สิทธิ์รับของรางวัลจำกัดต่อวัน หมดสิทธิ์แล้วยังช่วยเพื่อนตีได้ · ยังอยู่ระหว่างพัฒนา อาจเปลี่ยนแปลงได้</span>
+                    <span class="lang-en">* Reward claims are limited per day; after that you can still help friends fight · still in development and may change.</span>
+                </p>
             </div>
         </div>
     </section>
@@ -905,8 +957,8 @@
                         </div>
                     </div>
                     <p class="ult-teaser">
-                        <span class="lang-th">กับดักตามทางเดิน ทั้งหนามพุ่งจากพื้น ลูกธนูจากกำแพง และรูปปั้นพ่นไฟ (กำลังพัฒนา เร็ว ๆ นี้) · ทุกอย่างยังอาจเปลี่ยนแปลงได้</span>
-                        <span class="lang-en">Traps along the passages: spikes from the floor, arrows from the walls, fire-breathing statues (in development, coming soon) · everything may still change.</span>
+                        <span class="lang-th">กับดักตามทางเดิน ทั้งหนามพุ่งจากพื้น ลูกธนูจากกำแพง และรูปปั้นพ่นไฟ มอนเดินเหยียบก็ทำงาน ล่อมอนเข้ากับดักได้ แต่ก็ต้องระวังตัวเองด้วย (กำลังพัฒนา เร็ว ๆ นี้) · ทุกอย่างยังอาจเปลี่ยนแปลงได้</span>
+                        <span class="lang-en">Traps along the passages: spikes from the floor, arrows from the walls, fire-breathing statues. Monsters set them off too: lure a pack in, but watch your own step (in development, coming soon) · everything may still change.</span>
                     </p>
                 </div>
             </div>
@@ -922,8 +974,8 @@
                     <span class="lang-en">Cross-Platform PC & Mobile</span>
                 </h2>
                 <p class="section-subtitle">
-                    <span class="lang-th">เล่นร่วมกันได้อย่างสมบูรณ์แบบ ไม่ว่าจะบนคอมพิวเตอร์หรือมือถือ</span>
-                    <span class="lang-en">Seamless cross-play experience across PC, iOS, and Android</span>
+                    <span class="lang-th">คอมพิวเตอร์และมือถืออยู่ในโลกเดียวกัน ตั้งปาร์ตี้ด้วยกันได้</span>
+                    <span class="lang-en">PC and mobile players share one world and can party together</span>
                 </p>
                 <div class="title-divider"><img src="assets/shield_intact_1.png" alt="Shield Emblem" class="divider-icon"></div>
             </div>
@@ -937,8 +989,8 @@
                     </h3>
                     <ul>
                         <li><span class="lang-th">การควบคุมด้วยเมาส์และคีย์บอร์ดแม่นยำ</span><span class="lang-en">Precision Mouse & Keyboard controls</span></li>
-                        <li><span class="lang-th">การแสดงผล 60+ FPS กราฟิกแสงเงา AAA</span><span class="lang-en">60+ FPS with maximum atmospheric lighting</span></li>
-                        <li><span class="lang-th">ปุ่มลัดสลับ Preset อาวุธรวดเร็ว</span><span class="lang-en">Fast weapon preset hotkeys</span></li>
+                        <li><span class="lang-th">กราฟิกเต็มชุด แสงเงา หมอก และเอฟเฟกต์ครบ</span><span class="lang-en">Full graphics: lighting, shadows, fog and effects</span></li>
+                        <li><span class="lang-th">ปุ่มลัดสลับ Preset อาวุธ (นอกการต่อสู้)</span><span class="lang-en">Weapon preset hotkey (out of combat)</span></li>
                     </ul>
                 </div>
 
@@ -950,8 +1002,8 @@
                     </h3>
                     <ul>
                         <li><span class="lang-th">UI สัมผัสออกแบบพิเศษ ปุ่มนิ้วโป้งใหญ่</span><span class="lang-en">Tailored touch UI with comfortable thumb placement</span></li>
-                        <li><span class="lang-th">ระบบ Auto Farming เมื่อต้องการพักผ่อน</span><span class="lang-en">Offline Auto Farming feature</span></li>
-                        <li><span class="lang-th">การปรับแต่งกราฟิกยืดหยุ่น ลื่นไหลทุกเครื่อง</span><span class="lang-en">Flexible performance options for all devices</span></li>
+                        <li><span class="lang-th">Auto Farm ได้รางวัลเท่าเล่นเอง ใช้ตอนออฟไลน์ได้ จำกัดด้วยเกจรายวัน</span><span class="lang-en">Auto Farm earns the same as playing, works offline, limited by a daily gauge</span></li>
+                        <li><span class="lang-th">เมนูปรับกราฟิกตามเครื่อง (เงา หญ้า แสงหลังภาพ ความละเอียด)</span><span class="lang-en">Graphics settings to fit your device (shadows, grass, post-processing, resolution)</span></li>
                     </ul>
                 </div>
             </div>

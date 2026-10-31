@@ -1161,9 +1161,23 @@ h4 { font-size: 1.2rem; }
 /* Header fit (Claude): nav links never break mid-word; on phones the brand name shrinks to one line and the
    top sign-up button hides (the hero and the sign-up section carry their own buttons). */
 .main-nav a { white-space: nowrap; }
+/* 769-1100 px: eight links + EN + sign-up do not fit beside the brand (the name wrapped over the links at ~800 px),
+   so tablets and narrow windows use the same drop-down menu as phones but keep the sign-up button. */
 @media (max-width: 1100px) and (min-width: 769px) {
-    .main-nav a { font-size: 0.85rem; padding-left: 0.4rem; padding-right: 0.4rem; }
-    .brand-name { font-size: 1rem; }
+    .brand-name { font-size: 1rem; white-space: nowrap; }
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(11, 10, 15, 0.98);
+        border-bottom: 1px solid var(--gold-muted);
+        padding: 1.5rem;
+        display: none;
+    }
+    .main-nav.open { display: block; }
+    .main-nav ul { flex-direction: column; gap: 1.2rem; align-items: flex-start; }
+    .mobile-menu-toggle { display: flex; }
 }
 @media (max-width: 768px) {
     .brand-name { font-size: 0.95rem; white-space: nowrap; }
@@ -1539,3 +1553,6 @@ h4 { font-size: 1.2rem; }
     animation: monsterHint 1s ease-in-out infinite alternate;
 }
 @keyframes monsterHint { from { transform: translate(-50%, 0); } to { transform: translate(-50%, -6px); } }
+
+/* Weapon skills + Elite cards: pill rows under the lead text */
+.weapon-skill-list { justify-content: center; margin: 1.25rem auto 0; max-width: 900px; }
