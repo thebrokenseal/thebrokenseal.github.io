@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/@heroiclabs/nakama-js@2.8.0/; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https: wss:; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>แชต Broken Seal</title>
+  <meta name="description" content="แอปคู่หูของ The Broken Seal: ดูแชตโลกสดและตอบด้วยบัญชีเดียวกับในเกม">
+  <meta name="theme-color" content="#0B0A0F">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="แชต Broken Seal">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chonburi&family=Kanit:wght@400;500;600&family=Taviraj:wght@400;600&display=swap">
+  <!-- Nakama JS client, exact version + integrity hash. Update both together. -->
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@heroiclabs/nakama-js@2.8.0/dist/nakama-js.esm.mjs"
+        integrity="sha384-GzvI+Mw1QSvr4lmDE7pRGOWhLu9PMivL8/7Lk+bGhX/EmTDYutgpcSgV4MlW7+ld" crossorigin="anonymous">
+  <link rel="stylesheet" href="app.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="app" id="app" data-screen="boot">
+
+    <!-- ===== Header ===== -->
+    <header class="top">
+      <img class="top-icon" src="icons/icon-192.png" alt="" width="36" height="36">
+      <div class="top-title">
+        <h1>แชต Broken Seal</h1>
+        <p class="top-sub" id="statusLine" role="status" aria-live="polite">กำลังเตรียม…</p>
+      </div>
+      <button class="icon-btn" id="signOutBtn" type="button" hidden>ออกจากระบบ</button>
+    </header>
+    <div class="crack" aria-hidden="true"></div>
+
+    <!-- ===== Install hint (A2HS) ===== -->
+    <aside class="install" id="installHint" hidden>
+      <p id="installText"></p>
+      <div class="install-actions">
+        <button class="btn btn-gold btn-small" id="installBtn" type="button" hidden>ติดตั้งแอป</button>
+        <button class="btn btn-ghost btn-small" id="installClose" type="button">ไว้ทีหลัง</button>
+      </div>
+    </aside>
+
+    <!-- ===== Sign-in ===== -->
+    <main class="screen signin" id="signinScreen" hidden>
+      <section class="panel">
+        <h2>เข้าสู่ระบบ</h2>
+        <p class="muted">ใช้อีเมลและรหัสผ่านของบัญชีเดียวกับในเกม แชตที่พิมพ์ที่นี่จะขึ้นในเกมด้วยชื่อตัวละครของคุณ</p>
+
+        <div class="notice" id="configNotice" hidden>
+          <strong>ยังไม่ได้ตั้งค่าเซิร์ฟเวอร์</strong>
+          <span>แอปนี้ยังไม่รู้ที่อยู่เซิร์ฟเวอร์เกม (ดู README ในโฟลเดอร์ app) ระหว่างนี้ดู <a href="?demo=1">หน้าตัวอย่าง</a> ได้</span>
+        </div>
+
+        <form id="signinForm" novalidate>
+          <label class="field">
+            <span>อีเมล</span>
+            <input id="email" type="email" inputmode="email" autocomplete="username" required maxlength="128">
+          </label>
+          <label class="field">
+            <span>รหัสผ่าน</span>
+            <input id="password" type="password" autocomplete="current-password" required minlength="8" maxlength="128">
+          </label>
+          <label class="check" id="signUpRow" hidden>
+            <input id="signUp" type="checkbox">
+            <span>ยังไม่มีบัญชี สร้างใหม่ด้วยอีเมลนี้</span>
+          </label>
+          <p class="form-error" id="signinError" role="alert" hidden></p>
+          <button class="btn btn-gold btn-block" id="signinBtn" type="submit">เข้าสู่ระบบ</button>
+        </form>
+
+        <div class="or"><span>หรือ</span></div>
+        <div class="social">
+          <button class="btn btn-ghost btn-block" type="button" disabled aria-disabled="true">
+            เข้าด้วย Google <small>เร็ว ๆ นี้</small>
+          </button>
+          <button class="btn btn-ghost btn-block" type="button" disabled aria-disabled="true">
+            เข้าด้วย Apple <small>เร็ว ๆ นี้</small>
+          </button>
+        </div>
+
+        <details class="help">
+          <summary>เล่นในเกมแบบ Guest อยู่ ใช้บัญชีนั้นได้ไหม</summary>
+          <p>ยังไม่ได้ บัญชี Guest ในเกมผูกกับเครื่องที่เล่น ไม่มีอีเมลหรือรหัสผ่านให้ใช้เข้าจากที่อื่น
+            เมื่อเกมเปิดให้ผูกบัญชี (อีเมล, Google หรือ Apple ตั้งแต่ช่วง Alpha) ให้ผูกบัญชีในเกมก่อน
+            แล้วจึงเข้าแอปนี้ด้วยบัญชีที่ผูกแล้ว ตัวละครและชื่อจะเป็นชุดเดียวกัน</p>
+        </details>
+      </section>
+    </main>
+
+    <!-- ===== Chat ===== -->
+    <main class="screen chat" id="chatScreen" hidden>
+      <nav class="tabs" role="tablist" aria-label="ห้องแชต">
+        <button class="tab" role="tab" id="tabWorld" data-tab="world" aria-selected="true" type="button">
+          แชตโลก <span class="badge" id="badgeWorld" hidden></span>
+        </button>
+        <button class="tab" role="tab" id="tabMap" data-tab="map" aria-selected="false" type="button">
+          แชตแมพ <span class="badge" id="badgeMap" hidden></span>
+        </button>
+      </nav>
+
+      <div class="map-bar" id="mapBar" hidden>
+        <label for="mapSelect">แมพ</label>
+        <select id="mapSelect"></select>
+      </div>
+
+      <div class="log-wrap">
+        <ol class="log" id="log" aria-live="polite" aria-relevant="additions"></ol>
+        <p class="empty" id="emptyLog" hidden>ยังไม่มีข้อความในห้องนี้ เริ่มทักก่อนเลย</p>
+        <button class="jump" id="jumpBtn" type="button" hidden>ข้อความใหม่ ↓</button>
+      </div>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <p class="send-note" id="sendNote" role="alert" hidden></p>
+        <div class="composer-row">
+          <label class="sr-only" for="msgInput">ข้อความ</label>
+          <textarea id="msgInput" rows="1" maxlength="480" enterkeyhint="send"
+                    placeholder="พิมพ์ข้อความ…"></textarea>
+          <button class="btn btn-gold send" id="sendBtn" type="submit" disabled>ส่ง</button>
+        </div>
+        <div class="composer-meta">
+          <span id="roomLabel"></span>
+          <span class="count" id="charCount">0/120</span>
+        </div>
+      </form>
+    </main>
+
+  </div>
+
+  <noscript><p class="noscript">ต้องเปิด JavaScript เพื่อใช้แอปแชต</p></noscript>
+</body>
+</html>

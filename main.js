@@ -1,4 +1,19 @@
 /**
+ * ALPHA CONFIG - edit here only. Times are absolute UTC instants (Bangkok = UTC+7).
+ * Download links: paste the URL between the quotes; empty = button shows "coming soon".
+ */
+const ALPHA_CONFIG = {
+    start: '2026-11-17T11:00:00Z',      // Tue 17 Nov 2026 18:00 Bangkok
+    end: '2026-12-01T16:59:59Z',        // Tue 1 Dec 2026 23:59:59 Bangkok
+    downloads: {
+        windows: 'https://updates.thebrokensealgame.com/alpha/download/BrokenSeal-Alpha-0.1.0-windows.zip',
+        macos: 'https://updates.thebrokensealgame.com/alpha/download/BrokenSeal-Alpha-0.1.0-mac.zip',
+        android: 'https://play.google.com/apps/internaltest/4701162765935539875',   // Google Play internal-test link
+        ios: ''        // TestFlight invite link
+    }
+};
+
+/**
  * THE BROKEN SEAL - OFFICIAL WEBSITE JAVASCRIPT
  * Handles language switching, video viewport autoplay, and mobile navigation.
  */
@@ -185,4 +200,99 @@ const SIGNUP = {
             say("err", "ส่งไม่สำเร็จ ลองใหม่อีกครั้ง", "Could not send. Please try again.");
         }
     });
+})();
+
+// --- ALPHA COUNTDOWN + DOWNLOAD LINKS ---
+// Phases (Bangkok time): 'before' < 17 Nov 18:00, 'live' 17 Nov 18:00 - 1 Dec 23:59:59, 'after' beyond.
+// Download links work ONLY in 'live'; before and after the buttons are disabled with their own text.
+(function initAlpha() {
+    const box = document.getElementById('alphaCountdown');
+    if (!box) return;
+    const bodyEl = document.body;
+    const start = Date.parse(ALPHA_CONFIG.start);
+    const end = Date.parse(ALPHA_CONFIG.end);
+    const live = document.getElementById('alphaLive');
+    const timer = document.getElementById('alphaTimer');
+    const nums = {};
+    box.querySelectorAll('[data-unit]').forEach(el => { nums[el.dataset.unit] = el; });
+    let lastPhase = '', lastMinute = -1, parts = { d: 0, h: 0, m: 0 }, timerId = 0;
+    const pad = n => String(n).padStart(2, '0');
+    const isThai = () => !bodyEl.classList.contains('lang-en');
+
+    // Button text per phase (the label spans carry their own language class); 'live' restores the original text.
+    const dlLabels = {
+        before: { th: 'เปิดให้ดาวน์โหลด 17 พ.ย. 18:00', en: 'Opens 17 Nov, 18:00' },
+        soon:   { th: 'เร็ว ๆ นี้', en: 'Coming soon' },
+        after:  { th: 'ปิดรอบทดสอบแล้ว', en: 'Test round closed' }
+    };
+    const dlButtons = [...document.querySelectorAll('[data-dl]')];
+    dlButtons.forEach(a => a.querySelectorAll('.dl-label').forEach(l => { l.dataset.orig = l.textContent; }));
+
+    function applyDownloads(phase) {
+        dlButtons.forEach(a => {
+            const url = (ALPHA_CONFIG.downloads[a.dataset.dl] || '').trim();
+            const open = phase === 'live' && url !== '';
+            if (open) {
+                a.href = url;
+                a.rel = 'noopener';
+                a.classList.remove('is-soon');
+                a.removeAttribute('aria-disabled');
+            } else {
+                a.removeAttribute('href');
+                a.removeAttribute('rel');
+                a.classList.add('is-soon');
+                a.setAttribute('aria-disabled', 'true');
+            }
+            const key = phase === 'live' ? 'soon' : phase;   // live without a link yet = "coming soon"
+            a.querySelectorAll('.dl-label').forEach(l => {
+                l.textContent = open ? l.dataset.orig : dlLabels[key][l.classList.contains('lang-th') ? 'th' : 'en'];
+            });
+        });
+    }
+
+    // Screen readers: one announcement a minute (not every second), refreshed at once when the language switches;
+    // after the end it is the thank-you line instead of a countdown.
+    function announce() {
+        const th = isThai();
+        let text;
+        if (lastPhase === 'after') {
+            const el = box.querySelector(`[data-phase-text="after"].lang-${th ? 'th' : 'en'}`);
+            text = el ? el.textContent.trim() : '';
+        } else {
+            const lead = lastPhase === 'before' ? (th ? 'เปิดทดสอบ Alpha ใน' : 'Alpha test opens in')
+                                                : (th ? 'Alpha จะสิ้นสุดใน' : 'Alpha ends in');
+            text = th ? `${lead} ${parts.d} วัน ${parts.h} ชั่วโมง ${parts.m} นาที`
+                      : `${lead} ${parts.d} days ${parts.h} hours ${parts.m} minutes`;
+        }
+        if (live.textContent !== text) live.textContent = text;
+    }
+
+    function tick() {
+        const now = Date.now();
+        const phase = now < start ? 'before' : (now <= end ? 'live' : 'after');
+        if (phase !== lastPhase) {
+            lastPhase = phase;
+            lastMinute = -1;
+            box.dataset.phase = phase;
+            document.querySelectorAll('[data-phase-text]').forEach(el => { el.hidden = el.dataset.phaseText !== phase; });
+            timer.hidden = phase === 'after';
+            applyDownloads(phase);
+            if (phase === 'after') { announce(); clearInterval(timerId); return; }
+        }
+        const target = phase === 'before' ? start : end + 1000;
+        const left = Math.max(0, Math.floor((target - now) / 1000));
+        const d = Math.floor(left / 86400), h = Math.floor(left % 86400 / 3600),
+              m = Math.floor(left % 3600 / 60), s = left % 60;
+        nums.d.textContent = pad(d); nums.h.textContent = pad(h);
+        nums.m.textContent = pad(m); nums.s.textContent = pad(s);
+        const minuteKey = Math.floor(left / 60);
+        if (minuteKey !== lastMinute) {
+            lastMinute = minuteKey;
+            parts = { d, h, m };
+            announce();
+        }
+    }
+    tick();
+    if (lastPhase !== 'after') timerId = setInterval(tick, 1000);
+    new MutationObserver(announce).observe(bodyEl, { attributes: true, attributeFilter: ['class'] });   // language switch
 })();

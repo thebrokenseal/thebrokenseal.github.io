@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chonburi&family=Cinzel+Decorative:wght@700;900&family=Kanit:wght@400;500;600;700&family=Taviraj:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css?v=20261103a">
+    <link rel="stylesheet" href="style.css?v=20261104b">
 </head>
 <body class="theme-dark lang-th">
 
@@ -151,6 +151,99 @@
             <div class="scroll-arrow"></div>
         </div>
     </section>
+
+    <!-- ALPHA COUNTDOWN + DOWNLOADS (config: ALPHA_CONFIG at the top of main.js) -->
+    <section id="alpha-countdown" class="alpha-strip">
+        <div class="container">
+            <div class="alpha-countdown frame-gold" id="alphaCountdown" data-phase="before">
+                <p class="alpha-label" id="alphaLabel">
+                    <span class="lang-th" data-phase-text="before">เปิดทดสอบ Alpha ใน</span>
+                    <span class="lang-en" data-phase-text="before">Alpha test opens in</span>
+                    <span class="lang-th" data-phase-text="live" hidden>Alpha จะสิ้นสุดใน</span>
+                    <span class="lang-en" data-phase-text="live" hidden>Alpha ends in</span>
+                    <span class="lang-th" data-phase-text="after" hidden>ขอบคุณทุกคนที่ร่วมทดสอบ Alpha — เจอกันในเวอร์ชันถัดไป</span>
+                    <span class="lang-en" data-phase-text="after" hidden>Thank you to everyone who joined the Alpha — see you in the next build.</span>
+                </p>
+                <div class="alpha-timer" id="alphaTimer" aria-hidden="true">
+                    <div class="alpha-unit"><span class="alpha-num" data-unit="d">--</span><span class="alpha-cap"><span class="lang-th">วัน</span><span class="lang-en">Days</span></span></div>
+                    <div class="alpha-unit"><span class="alpha-num" data-unit="h">--</span><span class="alpha-cap"><span class="lang-th">ชั่วโมง</span><span class="lang-en">Hours</span></span></div>
+                    <div class="alpha-unit"><span class="alpha-num" data-unit="m">--</span><span class="alpha-cap"><span class="lang-th">นาที</span><span class="lang-en">Minutes</span></span></div>
+                    <div class="alpha-unit"><span class="alpha-num" data-unit="s">--</span><span class="alpha-cap"><span class="lang-th">วินาที</span><span class="lang-en">Seconds</span></span></div>
+                </div>
+                <span class="sr-only" id="alphaLive" aria-live="polite" aria-atomic="true"></span>
+                <p class="alpha-dates">
+                    <span class="lang-th">ทดสอบ Alpha: อังคาร 17 พฤศจิกายน 18:00 – อังคาร 1 ธันวาคม 2569 (เวลาประเทศไทย)</span>
+                    <span class="lang-en">Alpha test: Tue 17 November, 18:00 – Tue 1 December 2026 (Bangkok time, UTC+7)</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="lang-th">ดาวน์โหลด Alpha</span>
+                    <span class="lang-en">Download the Alpha</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="lang-th" data-phase-text="before">ลิงก์จะเปิดให้กดเมื่อเริ่มรอบทดสอบ 17 พ.ย. 18:00</span>
+                    <span class="lang-en" data-phase-text="before">Links go live when the test round starts on 17 Nov, 18:00</span>
+                    <span class="lang-th" data-phase-text="live" hidden>รอบทดสอบเปิดแล้ว เลือกแพลตฟอร์มของคุณ</span>
+                    <span class="lang-en" data-phase-text="live" hidden>The test round is open — pick your platform</span>
+                    <span class="lang-th" data-phase-text="after" hidden>รอบทดสอบ Alpha สิ้นสุดแล้ว ลิงก์ถูกปิด</span>
+                    <span class="lang-en" data-phase-text="after" hidden>The Alpha round has ended; the links are closed</span>
+                </p>
+            </div>
+            <div class="download-grid">
+                <article class="download-card frame-dark">
+                    <div class="platform-icon" aria-hidden="true">🖥️</div>
+                    <h3>Windows</h3>
+                    <a class="btn-primary dl-btn" data-dl="windows" href="#download">
+                        <span class="lang-th dl-label">ดาวน์โหลดสำหรับ Windows</span><span class="lang-en dl-label">Download for Windows</span>
+                    </a>
+                    <p class="dl-note">
+                        <span class="lang-th">แตก .zip แล้วเปิดเกม หาก Windows SmartScreen เตือน กด “More info” แล้ว “Run anyway”</span>
+                        <span class="lang-en">Unzip and run the game. If Windows SmartScreen warns you, click “More info” then “Run anyway”.</span>
+                    </p>
+                </article>
+                <article class="download-card frame-dark">
+                    <div class="platform-icon" aria-hidden="true">🍎</div>
+                    <h3>macOS</h3>
+                    <a class="btn-primary dl-btn" data-dl="macos" href="#download">
+                        <span class="lang-th dl-label">ดาวน์โหลดสำหรับ macOS</span><span class="lang-en dl-label">Download for macOS</span>
+                    </a>
+                    <p class="dl-note">
+                        <span class="lang-th">แตก .zip แล้วลากแอปไปไว้ใน Applications แล้วเปิดเกม</span>
+                        <span class="lang-en">Unzip, drag the app into Applications, then open it.</span>
+                    </p>
+                </article>
+                <article class="download-card frame-dark">
+                    <div class="platform-icon" aria-hidden="true">🤖</div>
+                    <h3>Android</h3>
+                    <a class="btn-primary dl-btn" data-dl="android" href="#download">
+                        <span class="lang-th dl-label">Google Play (ทดสอบแบบปิด)</span><span class="lang-en dl-label">Google Play (closed test)</span>
+                    </a>
+                    <p class="dl-note">
+                        <span class="lang-th">เปิดลิงก์ทดสอบด้วยบัญชี Google ที่สมัคร Alpha ไว้ แล้วกดติดตั้งผ่าน Play Store</span>
+                        <span class="lang-en">Open the test link with the Google account you signed up with, then install from the Play Store.</span>
+                    </p>
+                </article>
+                <article class="download-card frame-dark">
+                    <div class="platform-icon" aria-hidden="true">📱</div>
+                    <h3>iPhone</h3>
+                    <a class="btn-primary dl-btn" data-dl="ios" href="#download">
+                        <span class="lang-th dl-label">TestFlight</span><span class="lang-en dl-label">TestFlight</span>
+                    </a>
+                    <p class="dl-note">
+                        <span class="lang-th">ติดตั้งแอป TestFlight จาก App Store ก่อน แล้วเปิดลิงก์เชิญเพื่อติดตั้งเกม</span>
+                        <span class="lang-en">Install the TestFlight app from the App Store first, then open the invite link to install the game.</span>
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
 
     <!-- OVERVIEW & STORY SECTION -->
     <section id="overview" class="section-padding overview-section">
@@ -1166,12 +1259,15 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 The Broken Seal. All rights reserved.</p>
+                <p>&copy; 2026 The Broken Seal. All rights reserved.
+                    · <a href="privacy.html"><span class="lang-th">นโยบายความเป็นส่วนตัว</span><span class="lang-en">Privacy</span></a>
+                    · <a href="terms.html"><span class="lang-th">ข้อตกลง Alpha</span><span class="lang-en">Alpha terms</span></a>
+                    · <a href="credits.html"><span class="lang-th">เครดิต</span><span class="lang-en">Credits</span></a></p>
             </div>
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js?v=20261104a"></script>
     <script src="extras.js?v=20261029d"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "aaf0d91f701942b8920fa7b689e79f5c"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
