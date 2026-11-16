@@ -3,7 +3,7 @@
  * Download links: paste the URL between the quotes; empty = button shows "coming soon".
  */
 const ALPHA_CONFIG = {
-    start: '2026-11-17T11:00:00Z',      // Tue 17 Nov 2026 18:00 Bangkok
+    start: '2026-11-19T11:00:00Z',      // Thu 19 Nov 2026 18:00 Bangkok (moved from Tue 17 Nov, owner 2026-11-17)
     end: '2026-12-01T16:59:59Z',        // Tue 1 Dec 2026 23:59:59 Bangkok
     downloads: {
         windows: 'https://updates.thebrokensealgame.com/alpha/download/BrokenSeal-Alpha-0.1.0-windows.zip',
@@ -203,7 +203,7 @@ const SIGNUP = {
 })();
 
 // --- ALPHA COUNTDOWN + DOWNLOAD LINKS ---
-// Phases (Bangkok time): 'before' < 17 Nov 18:00, 'live' 17 Nov 18:00 - 1 Dec 23:59:59, 'after' beyond.
+// Phases (Bangkok time): 'before' < 19 Nov 18:00, 'live' 19 Nov 18:00 - 1 Dec 23:59:59, 'after' beyond.
 // Download links work ONLY in 'live'; before and after the buttons are disabled with their own text.
 (function initAlpha() {
     const box = document.getElementById('alphaCountdown');
@@ -221,7 +221,7 @@ const SIGNUP = {
 
     // Button text per phase (the label spans carry their own language class); 'live' restores the original text.
     const dlLabels = {
-        before: { th: 'เปิดให้ดาวน์โหลด 17 พ.ย. 18:00', en: 'Opens 17 Nov, 18:00' },
+        before: { th: 'เปิดให้ดาวน์โหลด 19 พ.ย. 18:00', en: 'Opens 19 Nov, 18:00' },
         soon:   { th: 'เร็ว ๆ นี้', en: 'Coming soon' },
         after:  { th: 'ปิดรอบทดสอบแล้ว', en: 'Test round closed' }
     };
