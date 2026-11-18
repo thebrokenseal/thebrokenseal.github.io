@@ -9,7 +9,7 @@ const ALPHA_CONFIG = {
         windows: 'https://updates.thebrokensealgame.com/alpha/download/BrokenSeal-Alpha-0.1.0-windows.zip',
         macos: 'https://updates.thebrokensealgame.com/alpha/download/BrokenSeal-Alpha-0.1.0-mac.zip',
         android: 'https://play.google.com/apps/internaltest/4701162765935539875',   // Google Play internal-test link
-        ios: ''        // TestFlight invite link
+        ios: 'https://testflight.apple.com/join/6whPACCC'        // TestFlight public link (user 2026-11-18)
     }
 };
 
